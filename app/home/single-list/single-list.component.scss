@@ -32,7 +32,6 @@ $mida_fletxa_L: 75;
 
 .quadricula,
 .quadricula_doble {
-  position: inline;
 }
 .quadricula_doble {
   margin-top: 245px;
@@ -123,7 +122,8 @@ $mida_fletxa_L: 75;
   .requadre_small {
     margin-top: $margin_S + px;
     margin-left: $margin_S + px;
-    width: $requadre_width_S + px;
+    margin-right: $margin_S + px;
+    // width: $requadre_width_S + px;
   }
   .quadricula,
   .quadricula_small {
@@ -143,21 +143,23 @@ $mida_fletxa_L: 75;
 
   swiper {
     margin-left: $margin_S + px;
-    height: ($alcada_requadre_S - 40) + px;
+    margin-right: $margin_S + px;
+  }
+  .swiper-slide {
+    width: 100%;
   }
   .swiper-button-disabled {
     opacity: 0;
   }
   .requadre_imatge {
-    width: $imatge_width_S + px;
-    height: $imatge_height_S + px;
+    width: 100%;
   }
 
   .requadre_imatge_img {
     position: relative;
     z-index: 0;
-    width: $imatge_width_S + px;
-    height: $imatge_height_S + px;
+    width: 100%;
+    // height: $imatge_height_S + px;
   }
   .requadre_imatge_destacada {
     z-index: 2;
@@ -174,7 +176,13 @@ $mida_fletxa_L: 75;
     top: 5px;
   }
   .requadre_text {
-    width: $requadre_text_S + px;
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+    z-index: 1;
+    min-height: 40px;
+    background-color: white;
+    width: 97%;
   }
   .requadre_text_titol {
     font-size: 12px;

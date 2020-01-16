@@ -2,7 +2,6 @@
 
 $mida_imatge_L: 140;
 $mida_imatge_M: 119;
-$mida_imatge_S: 121;
 
 .banners_inferiors {
   position: relative;
@@ -11,20 +10,15 @@ $mida_imatge_S: 121;
 
 @media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
   .banners_inferiors {
+    display: flex;
+    justify-content: space-between;
     margin-top: $margin_S + px;
     margin-left: $margin_S + px;
-    width: $requadre_width_S + px;
-    height: ($mida_imatge_S * 3) + 20 + px;
+    margin-right: $margin_S + px;
   }
-  .banner_inferior_espai {
-    display: inline-grid;
-    width: 10px;
-  }
+
   .banner_inferior {
-    display: inline-grid;
-    width: $mida_imatge_S + px;
-    height: $mida_imatge_S + px;
-    margin-bottom: $margin_S + px;
+    width: 32%;
   }
   .banner_inferior > a > img {
     width: 100%;

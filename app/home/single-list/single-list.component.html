@@ -16,9 +16,11 @@
   </div>
 
   <div class="quadricula" *ngIf="MostroInfo && !_NoHiHaElements">
+    <div class="caixa-swiper"></div>
+
     <swiper [config]="config_small">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" style="width: 200px;" *ngFor="let D of _DadesActivitats" [routerLink]="D.linkDetall">
+        <div class="swiper-slide" *ngFor="let D of _DadesActivitats" [routerLink]="D.linkDetall">
           <div class="requadre_imatge">
             <img src="{{ D.gURLImatge }}" class="requadre_imatge_img" />
 
