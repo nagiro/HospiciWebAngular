@@ -1,0 +1,60 @@
+@import "../../../variables.scss";
+
+$mida_boto: 14;
+$mida_boto_S: 14;
+$mida_boto_M: 14;
+
+    .banner { position: relative; z-index: 0; }
+    .banner-image { position: relative; z-index: 0; width: 100%; }
+    .banner-image > img { height: 100%; width: 100%; filter: brightness(0.5); }
+    .menu { z-index: 1; position: absolute; background-color: white; }
+    .logo { z-index: 1; position: absolute; }
+    .text_banner { z-index:1; position: absolute; color: black; top:180px; text-align:center; width:100%;}
+    .text_banner_titol { font-size: 30px; color:white; font-weight:bold; cursor: pointer;}
+    .text_banner_subtitol { font-size:20px; color:white;  cursor: pointer;}
+    .botons_banner { position: absolute; height: $mida_boto + px; bottom: 20px;  width: $requadre_width_L + px; text-align: center; cursor: pointer; }
+    .botons_banner_caixa { display: inline-block; margin:0 auto; }
+    .botons_banner_boto { display: inline-block; height: $mida_boto + px; width: $mida_boto + px; margin-left: 5px;}
+    .img_menu { height: 70%; width: 70%; margin-left: 15%; margin-top:15%; }
+    .img_logo { height: 100%; }
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+    .banner {
+        margin-left: $margin_S + px;
+        margin-top: 0px;
+        height: ( $requadre_height_S / 2 ) + px;
+        width: $requadre_width_S + px;
+    }
+    .banner-image { width: $requadre_width_S + px; height: ( $requadre_height_S / 2 ) + px; }
+    .text_banner { top: 55px; }
+    .text_banner_titol { font-size: 15px; }
+    .text_banner_subtitol { font-size:12px;}
+    .botons_banner { height: $mida_boto_S + px; bottom: 20px; width: $requadre_width_S + px;  }
+    .botons_banner_boto > img { height: ( $mida_boto_S / 2 ) + px; width: ( $mida_boto_S / 2 ) + px; }
+
+    .menu { top: 0px; height: $height_menu_S + px; width: $height_menu_S + px; }
+    .logo { top: 0px; right:0px; height: $height_menu_S + px; }
+
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+    .banner { margin-top: 0px; height: $requadre_height_M + px; width: $requadre_width_M + px; margin-left: $margin_M + px; }
+    .banner-image { width: $requadre_width_M + px; height: $requadre_height_M + px; }
+    .text_banner { top:160px; }
+    .botons_banner { height: $mida_boto_M + px; bottom: 20px;  width: $requadre_width_M + px; }
+    .botons_banner_boto > img { height: $mida_boto_M + px; width: $mida_boto_M + px; }
+    .menu { top: 0px; height: $height_menu_M + px; width: $height_menu_M + px; }
+    .logo { top: 0px; right:0px; height: $height_menu_M + px; }
+
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+    .banner { margin-top: 0px; height: $requadre_height_L + px; width: $requadre_width_L + px; margin-left: $margin_L + px; }
+    .banner-image { width: $requadre_width_L + px; height: $requadre_height_L + px; }
+    .text_banner { top:160px; }
+    .botons_banner { height: $mida_boto + px; bottom: 20px;  width: $requadre_width_L + px; }
+    .botons_banner_boto > img { height:$mida_boto + px; width: $mida_boto + px; }
+    .menu { top: 0px; height: $height_menu_L + px; width: $height_menu_L + px; }
+    .logo { top: 0px; right:0px; height: $height_menu_L + px; }
+}
+

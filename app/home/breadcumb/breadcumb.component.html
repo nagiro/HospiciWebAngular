@@ -1,0 +1,12 @@
+<div class="breadcumb">
+  <div class="element"
+    *ngFor="let B of Breadcumb.BreadcumbList; let i = index"
+    [routerLink]="B.Link"
+    [ngStyle]="{'background-color': getColor(i)}">
+    <div class="element_text">
+      <span>{{B.Titol | slice : 0 : 30}}</span></div>
+    <div class="element_fletxa"
+      [ngStyle]="{ 'border-left-color':  getColor(i) , 'border-top-color':  getColor(i+1), 'border-bottom-color':  getColor(i+1) }">
+    </div>
+  </div>
+</div>

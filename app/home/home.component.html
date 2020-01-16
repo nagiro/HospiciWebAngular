@@ -1,0 +1,71 @@
+<body>
+  <app-barrasuperior></app-barrasuperior>
+
+  <div class="page">
+    <div class="barra_superior"></div>
+
+    <app-menu [InputDades]="WebStructure.Menu"></app-menu>
+
+    <app-banner [InputDades]="WebStructure.Promocions" *ngIf="WebStructure.Mode.banner"></app-banner>
+
+    <app-banner [InputDades]="WebStructure.Promocions" *ngIf="WebStructure.Mode.static_banner"></app-banner>
+
+    <app-breadcumb *ngIf="WebStructure.Mode.breadcumb" [Breadcumb]="WebStructure.Breadcumb"></app-breadcumb>
+
+    <app-calendari (FiltreDia)="AplicaFiltre($event)" *ngIf="WebStructure.Mode.calendari"></app-calendari>
+
+    <app-static-page [InputDades]="WebStructure.StaticPage" *ngIf="WebStructure.Mode.static_page"> ></app-static-page>
+
+    <app-llistat-activitats [InputDades]="WebStructure.ActivitatsPerTipus" *ngIf="WebStructure.Mode.lists_activitats">
+    </app-llistat-activitats>
+
+    <app-llistat-cicles *ngIf="WebStructure.Mode.lists_cicles" [InputDades]="WebStructure.ActivitatsCicles"></app-llistat-cicles>
+
+    <app-detall *ngIf="WebStructure.Mode.detall" [ActivitatDetall]="WebStructure.ActivitatDetall"></app-detall>
+
+    <app-noticies *ngIf="WebStructure.Mode.noticies" [InputDades]="WebStructure.Noticies"></app-noticies>
+
+    <app-single-list
+      [InputTitol]="'DIVULGACIÓ'"
+      [InputColor]="'#F4A261'"
+      [InputDades]="WebStructure.Cicles"
+      [GenLink]="['/cicles', 0, 'Tots_els_cicles']"
+      [AmbFiltre]="false"
+      *ngIf="WebStructure.Mode.lists"
+    ></app-single-list>
+
+    <app-single-list
+      [InputTitol]="'EXPOSICIONS'"
+      [InputColor]="'#C95E49'"
+      [InputDades]="WebStructure.Exposicions"
+      [GenLink]="['/activitats', 46, 'Exposicions']"
+      [AmbFiltre]="false"
+      *ngIf="WebStructure.Mode.lists"
+    ></app-single-list>
+
+    <app-single-list
+      [InputTitol]="'MÚSICA'"
+      [InputColor]="'#2A9D8F'"
+      [InputDades]="WebStructure.Musica"
+      [GenLink]="['/activitats', 56, 'Musica']"
+      [AmbFiltre]="false"
+      *ngIf="WebStructure.Mode.lists"
+    ></app-single-list>
+
+    <app-single-list
+      [InputTitol]="'ACTIVITATS'"
+      [InputColor]="'#E9C46A'"
+      [InputDades]="WebStructure.ProperesActivitats"
+      [GenLink]="['/activitats', 0, 'Totes_les_activitats']"
+      [AmbFiltre]="true"
+      *ngIf="WebStructure.Mode.lists"
+    ></app-single-list>
+
+    <app-banners *ngIf="WebStructure.Mode.banners"></app-banners>
+    <div *ngIf="WebStructure.Mode.banners">&nbsp;</div>
+
+    <app-footer></app-footer>
+
+    <div style="height:30px; clear:both;"></div>
+  </div>
+</body>

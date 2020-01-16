@@ -1,0 +1,32 @@
+<!-- Imatge a banner, aquí només transparent canvas. -->
+<div class="menu"
+  (click)="ClickMenu()">
+</div>
+<div *ngIf="_Obert"
+  class="menu_text">
+  <ul>
+    <li *ngFor="let M0 of _Menu.SubElements">
+      <div class="enllac"
+        (click)="ClickElement(M0)">
+        {{MostraSimbolMenu(M0)}} {{M0.Element.Nodes_TitolMenu}}
+      </div>
+      <ul>
+        <li *ngFor="let M1 of M0.SubElements"
+          [hidden]="!M0.Obert">
+          <div class="enllac"
+            (click)="ClickElement(M1)">
+            {{MostraSimbolMenu(M1)}} {{M1.Element.Nodes_TitolMenu}}
+          </div>
+          <ul>
+            <li *ngFor="let M2 of M1.SubElements"
+              [hidden]="!M1.Obert">
+              <div class="enllac"
+                (click)="ClickElement(M2)">
+                {{MostraSimbolMenu(M2)}} {{M2.Element.Nodes_TitolMenu}}</div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,29 @@
+@import "../../../variables.scss";
+
+$IMG_L: 35;
+$IMG_S: 20;
+
+.barra_superior { background-color:black; width:100%; color: white; cursor: pointer; }
+.barra_superior_zona_botons { margin:0 auto; height: 100%; }
+
+.barra_superior_zona_botons_boto_grisclar { display: inline-block; background-color: #231F20; height: 102%; border: 0px; }
+.barra_superior_zona_botons_boto_grisfosc { display: inline-block; background-color: #343435; height: 102%; border: 0px; }
+
+.barra_superior_zona_botons_boto_grisclar > img { width: 100%; height: 100%; }
+.barra_superior_zona_botons_boto_grisfosc > img { width: 100%; height: 100%; }
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+    .barra_superior { height: $IMG_S + px; }
+    .barra_superior_zona_botons { width: $amplada_inicial_S + px; }
+    .info { display: none; }
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+    .barra_superior { height: $IMG_L + px; }
+    .barra_superior_zona_botons { width: $amplada_inicial_M + px; }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+    .barra_superior { height: $IMG_L + px; }
+    .barra_superior_zona_botons { width: $amplada_inicial_L + px; }
+}

@@ -1,0 +1,50 @@
+@import '../../variables.scss';
+
+/* Small screen! */
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+  body {
+    background-color: white;
+  }
+  .page {
+    margin: 0 auto;
+    max-width: $amplada_inicial_S + px;
+    height: auto;
+    background-color: white;
+    position: relative;
+  }
+  .barra_superior {
+    height: $margin_S + px;
+  }
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+  body {
+    background-color: #266653;
+  }
+  .page {
+    margin: 0 auto;
+    max-width: $amplada_inicial_M + px;
+    height: auto;
+    background-color: white;
+    position: relative;
+  }
+  .barra_superior {
+    height: $margin_M + px;
+  }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+  body {
+    background-color: #266653;
+  }
+  .page {
+    margin: 0 auto;
+    max-width: $amplada_inicial_L + px;
+    height: auto;
+    background-color: white;
+    position: relative;
+  }
+  .barra_superior {
+    height: $margin_L + px;
+  }
+}

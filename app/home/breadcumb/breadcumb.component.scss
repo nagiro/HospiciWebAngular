@@ -1,0 +1,91 @@
+@import "../../../variables.scss";
+
+.breadcumb { display: relative; background-color:white; }
+.element, .element_ultim { display: inline-flex; cursor: pointer; }
+.element_ultim { background-color: white; }
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+    .breadcumb {
+        z-index:0;
+        margin: $margin_S + px;
+        position: relative;
+        background-color: #EEEEEE;
+    }
+
+    .element_fletxa {
+        width: 0;
+        height: 0px;
+        border-left: ($margin_M / 3) + px solid #AAAAAA;
+        border-top: ($margin_M / 2) + px solid #DDDDDD;
+        border-bottom: ($margin_M / 2) + px solid #DDDDDD;
+        display: inline-flex;
+    }
+
+    .element_text {
+        font-size: $font_size_S + px;
+        display: inline-flex;
+    }
+
+    .element_text > span {
+        margin: 6px;
+    }
+
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+    .breadcumb {
+        z-index:0;
+        margin: $margin_M + px;
+        position: relative;
+        background-color: #EEEEEE;
+    }
+
+    .element_fletxa {
+        width: 0;
+        height: 0px;
+        border-left: ($margin_M / 3) + px solid #AAAAAA;
+        border-top: ($margin_M / 2) + px solid #DDDDDD;
+        border-bottom: ($margin_M / 2) + px solid #DDDDDD;
+        display: inline-flex;
+    }
+
+    .element_text {
+        font-size: $font_size_M + px;
+        display: inline-flex;
+    }
+
+    .element_text > span {
+        margin: 6px;
+    }
+
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+    .breadcumb {
+        z-index:0;
+        margin: $margin_L + px;
+        position: relative;
+        background-color: #EEEEEE;
+    }
+
+    .element_fletxa {
+        width: 0;
+        height: 0px;
+        border-left: ($margin_L / 3) + px solid #AAAAAA;
+        border-top: ($margin_L / 2) + px solid #DDDDDD;
+        border-bottom: ($margin_L / 2) + px solid #DDDDDD;
+        display: inline-flex;
+    }
+
+    .element_text {
+        font-size: $font_size_L + px;
+        display: inline-flex;
+    }
+
+    .element_text > span {
+        margin: 6px;
+    }
+
+}
+
+

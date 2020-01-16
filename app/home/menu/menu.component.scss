@@ -1,0 +1,70 @@
+@import "../../../variables.scss";
+
+.menu {
+        z-index: 2;
+        position: absolute;
+        background-color: transparent;
+        cursor: pointer;
+}
+
+.menu_text {
+        z-index: 2;
+        position: absolute;
+        height: auto;
+        background-color: white;
+        width: auto;
+        cursor: pointer;
+        padding: 10px;
+        }
+
+.enllac:hover {
+        text-decoration: underline;
+}
+li { list-style: none; padding:0px; margin: 0px; }
+ul { padding:0px; margin:7px;  }
+
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+        .menu {
+                left: $margin_S + px;
+                top:  $margin_S + px;
+                height: $height_menu_S + px;
+                width: $height_menu_S + px;
+        }
+
+        .menu_text {
+                left: $margin_S + px;
+                top: $height_menu_S + $margin_S + px;
+                font-size: $font_size_S + px;
+                }
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+        .menu {
+                left: $margin_M + px;
+                top:  $margin_M + px;
+                height: $height_menu_M + px;
+                width: $height_menu_M + px;
+        }
+
+        .menu_text {
+                left: $margin_M + px;
+                top: $height_menu_M + $margin_M + px;
+                font-size: $font_size_M + px;
+                }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+        .menu {
+                left: $margin_L + px;
+                top:  $margin_L + px;
+                height: $height_menu_L + px;
+                width: $height_menu_L + px;
+        }
+
+        .menu_text {
+                left: $margin_L + px;
+                top: $height_menu_L + $margin_L + px;
+                font-size: $font_size_L + px;
+                }
+}

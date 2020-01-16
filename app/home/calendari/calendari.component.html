@@ -1,0 +1,42 @@
+<div class="requadre_filtres">
+  <div class="titol_filtres" (click)="FiltresOberts = !FiltresOberts">Filtres</div>
+  <div class="requadre_tots_filtres" *ngIf="FiltresOberts">
+    <div class="requadre_calendari">
+      <div class="cal-mesos-fletxa" (click)="GoMes(true)"><</div>
+      <div class="requadre-taula-calendari">
+        <div class="control-mesos">{{ MesText }} {{ AnyText }}</div>
+        <div class="taula-calendari">
+          <table>
+            <tr>
+              <td>Dl</td>
+              <td>Dt</td>
+              <td>Dc</td>
+              <td>Dj</td>
+              <td>Dv</td>
+              <td>Ds</td>
+              <td>Dg</td>
+            </tr>
+            <tr *ngFor="let Row of DiesMesFiles">
+              <td *ngFor="let D of Row" [ngClass]="D.C" (click)="AplicaFiltre(D.DiaNumero)">{{ D.DiaNumero }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="cal-mesos-fletxa" (click)="GoMes(false)">></div>
+    </div>
+  </div>
+</div>
+
+<div class="calendari">
+  <div class="control-mesos">
+    <div class="cal-mesos-fletxa" (click)="GoMes(true)"><</div>
+    <div class="cal-mesos">{{ MesText }}<br />{{ AnyText }}</div>
+    <div class="cal-mesos-fletxa" (click)="GoMes(false)">></div>
+  </div>
+  <div class="control-dies">
+    <div [ngClass]="D.C" *ngFor="let D of DiesMes" (click)="AplicaFiltre(D.DiaNumero)">
+      <div class="cal-dia-text">{{ D.DiaText }}</div>
+      <div class="cal-dia-numero">{{ D.DiaNumero }}</div>
+    </div>
+  </div>
+</div>

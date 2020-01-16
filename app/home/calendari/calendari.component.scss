@@ -1,0 +1,207 @@
+@import '../../../variables.scss';
+
+$FletxaMesosS: 20;
+$MesosS: 60;
+$TotalMesosS: $MesosS + $FletxaMesosS * 2;
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+  .requadre_filtres {
+    min-height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    margin-left: $margin_S + px;
+    margin-right: $margin_S + px;
+    clear: both;
+  }
+
+  .titol_filtres {
+    padding-top: 8px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+  .requadre_tots_filtres {
+    padding-left: 10px;
+    height: 130px;
+    display: block;
+    background-color: black;
+  }
+
+  .requadre_calendari {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    width: 232px;
+  }
+
+  .calendari {
+    display: none;
+    margin-left: $margin_S + px;
+    margin-right: $margin_S + 1 + px;
+    background-color: white;
+    height: 30px;
+  }
+  .control-mesos {
+    text-align: center;
+  }
+
+  .requadre-taula-calendari {
+    width: 170px;
+    display: block;
+  }
+
+  .taula-calendari {
+  }
+
+  .taula-calendari > table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .cal-mesos-fletxa {
+    background-color: rgb(106, 152, 196);
+    width: 30px;
+    height: 114px;
+    padding-top: 8px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+
+  .cal-dia:hover {
+    background-color: rgb(106, 152, 196);
+  }
+  .cal-dia {
+    font-size: 10px;
+    width: 21px;
+    color: black;
+    cursor: pointer;
+  }
+  .cal-dia-normal {
+    background-color: white;
+  }
+  .cal-dia-festa {
+    background-color: gray;
+  }
+  .cal-dia-text {
+    text-align: center;
+  }
+  .cal-dia-numero {
+    text-align: center;
+  }
+}
+
+$FletxaMesosM: 20;
+$MesosM: 60;
+$TotalMesosM: $MesosM + $FletxaMesosM * 2;
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+  .requadre_filtres {
+    display: none;
+  }
+  .calendari {
+    margin-left: $margin_M + px;
+    margin-right: $margin_M + 1 + px;
+    background-color: white;
+    height: 30px;
+    display: flex;
+  }
+  .control-dies {
+    display: flex;
+    width: ($requadre_width_M - $TotalMesosM) + px;
+    justify-content: space-between;
+  }
+  .control-mesos {
+    display: flex;
+    width: $TotalMesosM + px;
+  }
+  .cal-mesos-fletxa {
+    background-color: rgb(106, 152, 196);
+    width: $FletxaMesosM + px;
+    height: 100%;
+    padding-top: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .cal-mesos {
+    width: $MesosM + px;
+    height: 100%;
+    background-color: rgb(106, 152, 196);
+    text-align: center;
+    font-size: 12px;
+  }
+  .cal-dia {
+    font-size: 10px;
+    width: 21px;
+    cursor: pointer;
+  }
+  .cal-dia-normal {
+    background-color: white;
+  }
+  .cal-dia-festa {
+    background-color: gray;
+  }
+  .cal-dia-text {
+    text-align: center;
+  }
+  .cal-dia-numero {
+    text-align: center;
+  }
+}
+
+$FletxaMesosL: 30;
+$MesosL: 70;
+$TotalMesosL: $MesosL + $FletxaMesosL * 2;
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+  .requadre_filtres {
+    display: none;
+  }
+  .calendari {
+    margin-left: $margin_L + px;
+    margin-right: $margin_L + 1 + px;
+    background-color: white;
+    height: 40px;
+    display: flex;
+  }
+  .control-dies {
+    display: flex;
+    width: ($requadre_width_L - $TotalMesosL) + px;
+    justify-content: space-between;
+  }
+  .control-mesos {
+    display: flex;
+    width: $TotalMesosL + px;
+  }
+  .cal-mesos-fletxa {
+    background-color: rgb(106, 152, 196);
+    width: $FletxaMesosL + px;
+    height: 100%;
+    padding-top: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .cal-mesos {
+    width: $MesosL + px;
+    height: 100%;
+    background-color: rgb(106, 152, 196);
+    text-align: center;
+    font-size: 14px;
+  }
+  .cal-dia {
+    font-size: 12px;
+    width: 21px;
+    cursor: pointer;
+  }
+  .cal-dia-normal {
+    background-color: white;
+    font-size: 14px;
+  }
+  .cal-dia-festa {
+    background-color: gray;
+    font-size: 14px;
+  }
+  .cal-dia-text {
+    text-align: center;
+  }
+  .cal-dia-numero {
+    text-align: center;
+  }
+}

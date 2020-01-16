@@ -1,0 +1,58 @@
+@import "../../../variables.scss";
+
+$requadre_color: $color_fons_detall;
+
+.requadre_titol, .requadre_info, .requadre_detall { position: relative; }
+.requadre_titol { background-color:inherit; }
+.requadre_info { background-color: $requadre_color; }
+.requadre_detall { background-color: $requadre_color; }
+
+.titol { width: 100%; text-align: center; }
+.dates { width: 100%; text-align: center; }
+.titol_text { }
+.text {  }
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+    .requadre_titol, .requadre_info, .requadre_detall {
+        margin-left: $margin_S + px;
+        margin-top: $margin_S + px;
+        margin-bottom: $margin_S + px;
+        width: $requadre_width_S + px;
+    }
+    .titol { font-size: $font_size_S + 10 + px; }
+    .dates { font-size: $font_size_S + 8 + px; }
+    .titol_text { font-size: $font_size_S + px; font-weight: bold; padding: 10px; }
+    .text { font-size: $font_size_S + px; padding: 10px; }
+
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+    .requadre_titol, .requadre_info, .requadre_detall {
+        margin-left: $margin_M + px;
+        margin-top: $margin_M + px;
+        margin-bottom: $margin_M + px;
+        width: $requadre_width_M + px;
+    }
+    .titol { font-size: $font_size_M + 10 + px; }
+    .dates { font-size: $font_size_M + 8 + px; }
+    .titol_text { font-size: $font_size_M + px; font-weight: bold; padding: 10px; }
+    .text { font-size: $font_size_M + px; padding: 10px; }
+
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+    .requadre_titol, .requadre_info, .requadre_detall {
+        margin-left: $margin_L + px;
+        margin-top: $margin_L + px;
+        margin-bottom: $margin_L + px;
+        width: $requadre_width_L + px;
+    }
+    .titol { font-size: $font_size_L + 10 + px; }
+    .dates { font-size: $font_size_L + px; }
+    .titol_text { font-size: $font_size_L + px; font-weight: bold; padding: 10px; }
+    .text { font-size: $font_size_L + px; padding: 10px; }
+
+}
+
+
+

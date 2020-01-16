@@ -1,0 +1,37 @@
+@import "../../../variables.scss";
+
+$increment_marge_superior: 20;
+
+.text  {  position:relative; }
+
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+    .text  {
+        margin-left: $margin_S + px;
+        margin-top: ($margin_S + $increment_marge_superior) + px;
+        width: $requadre_width_S + px;
+        margin-bottom: $margin_S + px;
+        font-size: $font_size_S + px;
+    }
+
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+    .text  {    margin-left:$margin_M + px;
+                margin-top: ($margin_M + $increment_marge_superior) + px;
+                width: $requadre_width_M + px;
+                margin-bottom: $margin_M + px;
+                font-size: $font_size_M + px;
+            }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+    .text  {    margin-left:$margin_L + px;
+                margin-top: ($margin_L + $increment_marge_superior) + px;
+                width: $requadre_width_L + px;
+                margin-bottom: $margin_L + px;
+                font-size: $font_size_L + px;
+            }
+
+}
+

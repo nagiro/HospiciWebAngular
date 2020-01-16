@@ -1,0 +1,364 @@
+@import '../../../variables.scss';
+
+$requadre_text_L: 236;
+$requadre_text_M: ($requadre_text_L - 65);
+$alcada_requadre_S: 775;
+$alcada_fletxa: 120;
+$alcada_fletxa_doble: 240;
+
+$mida_fletxa_S: 75;
+$mida_fletxa_M: 75;
+$mida_fletxa_L: 75;
+
+.requadre,
+.requadre_small {
+  position: relative;
+}
+.titol_box {
+  height: 35px;
+}
+.titol {
+  height: 100%;
+  background-color: white;
+  width: max-content;
+  cursor: pointer;
+}
+.titol_text {
+  margin-right: 10px;
+}
+.titol_text:hover {
+  text-decoration: underline;
+}
+
+.quadricula,
+.quadricula_doble {
+  position: inline;
+}
+.quadricula_doble {
+  margin-top: 245px;
+}
+.requadre_imatge {
+  position: relative;
+  cursor: pointer;
+}
+.requadre_imatge_img {
+}
+.requadre_imatge_destacada {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+}
+.imatge_destacada {
+  position: absolute;
+  width: 20px;
+  left: 5px;
+  top: 5px;
+}
+.requadre_text {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  z-index: 1;
+  min-height: 40px;
+  background-color: white;
+}
+
+.requadre_text_titol {
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+.requadre_text_data {
+  display: inline-block;
+  border-right: 1px solid black;
+  padding: 5px;
+  width: 45%;
+}
+.requadre_text_espai {
+  display: inline-block;
+  padding: 5px;
+  width: 45%;
+}
+
+.fletxa_avant,
+.fletxa_avant_doble,
+.fletxa_avant_s {
+  position: absolute;
+  z-index: 1;
+  right: 0px;
+  cursor: pointer;
+}
+.fletxa_avant_doble,
+.fletxa_avant_s_doble {
+}
+.fletxa_enrrera,
+.fletxa_enrrera_doble,
+.fletxa_enrrera_s {
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  cursor: pointer;
+}
+.fletxa_enrrera_doble,
+.fletxa_avant_s_doble {
+}
+
+.filter_box {
+  position: absolute;
+}
+.filter_box_img {
+}
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+  .filter_box {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  .filter_box_img {
+    width: 25px;
+  }
+  .requadre {
+    display: none;
+  }
+  .requadre_small {
+    margin-top: $margin_S + px;
+    margin-left: $margin_S + px;
+    width: $requadre_width_S + px;
+  }
+  .quadricula,
+  .quadricula_small {
+    margin-top: $margin_S + px;
+    padding-bottom: $margin_S + px;
+  }
+
+  .titol_box {
+    display: flex;
+  }
+  .titol {
+  }
+  .titol_text {
+    padding-top: 10px;
+    font-size: 14px;
+  }
+
+  swiper {
+    margin-left: $margin_S + px;
+    height: ($alcada_requadre_S - 40) + px;
+  }
+  .swiper-button-disabled {
+    opacity: 0;
+  }
+  .requadre_imatge {
+    width: $imatge_width_S + px;
+    height: $imatge_height_S + px;
+  }
+
+  .requadre_imatge_img {
+    position: relative;
+    z-index: 0;
+    width: $imatge_width_S + px;
+    height: $imatge_height_S + px;
+  }
+  .requadre_imatge_destacada {
+    z-index: 2;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+  }
+  .imatge_destacada {
+    position: absolute;
+    width: 30px;
+    left: 5px;
+    top: 5px;
+  }
+  .requadre_text {
+    width: $requadre_text_S + px;
+  }
+  .requadre_text_titol {
+    font-size: 12px;
+  }
+  .requadre_text_data {
+    font-size: 12px;
+  }
+  .requadre_text_espai {
+    font-size: 12px;
+  }
+
+  .fletxa_desplegable {
+    background-color: white;
+    padding-top: 8px;
+    padding-right: 20px;
+    width: 10px;
+  }
+  .fletxa_desplegable > img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .NoHiHaActivitatText {
+    font-size: 12px;
+    padding: 10px;
+    font-weight: normal;
+  }
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+  .filter_box {
+    position: absolute;
+    right: $margin_M + px;
+    top: 15px;
+  }
+  .requadre {
+    margin-top: $margin_S + px;
+    padding-bottom: $margin_M + px;
+    margin-left: $margin_M + px;
+    width: $requadre_width_M + px;
+  }
+  .requadre_small {
+    display: none;
+  }
+
+  .titol_box {
+  }
+  .titol {
+  }
+  .titol_text {
+    font-size: 20px;
+  }
+  .quadricula,
+  .quadricula_doble {
+    margin-top: $margin_M + px;
+  }
+  .quadricula_doble {
+  }
+
+  swiper {
+    margin-left: ($margin_M - 4) + px;
+    width: ($requadre_width_M - $margin_M) + px;
+  }
+  .swiper-button-disabled {
+    opacity: 0;
+  }
+  .requadre_imatge {
+    width: $imatge_width_M + px;
+    height: $imatge_height_M + px;
+  }
+
+  .requadre_imatge_img {
+    width: $imatge_width_M + px;
+    height: $imatge_height_M + px;
+  }
+  .requadre_imatge_destacada {
+    width: 30px;
+    height: 30px;
+  }
+  .imatge_destacada {
+    width: 20px;
+    left: 5px;
+    top: 5px;
+  }
+  .requadre_text {
+    width: $requadre_text_M + px;
+  }
+  .requadre_text_titol {
+    font-size: 12px;
+  }
+  .requadre_text_data {
+    font-size: 10px;
+    width: (($requadre_text_M / 2)-10) + px;
+  }
+  .requadre_text_espai {
+    font-size: 10px;
+    width: (($requadre_text_M / 2)-11) + px;
+  }
+  .NoHiHaActivitatText {
+    font-size: 12px;
+    padding: 10px;
+    font-weight: normal;
+  }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+  .filter_box {
+    position: absolute;
+    right: $margin_L + px;
+    top: 15px;
+  }
+  .requadre {
+    padding-bottom: 0px;
+    margin-left: $margin_L + px;
+    margin-top: $margin_L + px;
+    width: $requadre_width_L + px;
+  }
+  .requadre_small {
+    display: none;
+  }
+
+  .titol_box {
+  }
+  .titol {
+  }
+  .titol_text {
+    font-size: 20px;
+  }
+
+  .quadricula,
+  .quadricula_doble {
+    margin-top: $margin_L + px;
+    padding-bottom: $margin_L + px;
+  }
+  .quadricula_doble {
+    margin-top: 0px;
+  }
+
+  swiper {
+    margin-left: ($margin_L) + px;
+    width: ($requadre_width_L - $margin_L) + px;
+  }
+  /* .swiper-slide:not(:last-child) { margin-right: 75px; } */
+  .swiper-slide {
+    margin-right: 75px;
+  }
+  .swiper-button-disabled {
+    opacity: 0;
+  }
+  .requadre_imatge {
+    width: $imatge_width_L + px;
+    height: $imatge_height_L + px;
+  }
+  .requadre_imatge_img {
+    width: $imatge_width_L + px;
+    height: $imatge_height_L + px;
+  }
+  .requadre_imatge_destacada {
+    width: 30px;
+    height: 30px;
+  }
+  .imatge_destacada {
+    width: 20px;
+    left: 5px;
+    top: 5px;
+  }
+
+  .requadre_text {
+    width: $requadre_text_L + px;
+  }
+  .requadre_text_titol {
+    font-size: 12px;
+  }
+  .requadre_text_data {
+    font-size: 10px;
+    width: (($requadre_text_L / 2)-10) + px;
+  }
+  .requadre_text_espai {
+    font-size: 10px;
+    width: (($requadre_text_L / 2)-11) + px;
+  }
+  .NoHiHaActivitatText {
+    font-size: 14px;
+    padding: 10px;
+    font-weight: normal;
+  }
+}

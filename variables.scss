@@ -1,0 +1,55 @@
+$width_S_MIN: 320;
+$width_S_MAX: 767;
+$width_M_MIN: 767;
+$width_M_MAX: 1024;
+$width_L_MIN: 1025;
+$width_L_MAX: 2040;
+
+$proportion: 0.88964844;
+$proportion_M: 1.336375488917862;
+$proportion_S: 3.203125;
+
+$amplada_inicial_L: 911;
+$amplada_inicial_M: 683;
+$amplada_inicial_S: 272;
+
+$margin_M: 27;
+$margin_L: 30;
+$margin_S: 10;
+
+$requadre_width_L: 850;
+$requadre_width_M: 633;
+$requadre_width_S: $amplada_inicial_S - (2 * $margin_S);
+
+$requadre_height_L: 413;
+$requadre_height_M: 367;
+$requadre_height_S: 260;
+
+$imatge_height_L: 210;
+$imatge_height_M: 156;
+$imatge_height_S: $requadre_width_S - ($margin_S * 2);
+
+$imatge_width_L: 245;
+$imatge_width_M: 181;
+$imatge_width_S: $requadre_width_S - ($margin_S * 2);
+
+$margin_imatge_L: 26;
+$margin_imatge_M: 22;
+$margin_imatge_S: $margin_S;
+
+$requadre_text_L: 228;
+$requadre_text_M: 164;
+$requadre_text_S: $imatge_width_S - 10;
+
+$color_fons_detall: #DDDDDD;
+$height_menu_S: 30;
+$height_menu_M: 50;
+$height_menu_L: 70;
+
+$font_size_S: 10;
+$font_size_M: 16;
+$font_size_L: 16;
+
+$font_size_S: 10;
+$font_size_M: 14;
+$font_size_L: 14;

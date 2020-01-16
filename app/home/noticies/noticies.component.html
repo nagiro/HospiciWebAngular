@@ -1,0 +1,18 @@
+<swiper [config]="config"
+  class="noticies">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"
+      *ngFor="let N of _Noticies">
+      <div class="requadre-text">
+        <div class="text_noticies_titol">{{N.Titol}}</div>
+        <div class="text_noticies_text"
+          [innerHTML]="N.Text"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</swiper>

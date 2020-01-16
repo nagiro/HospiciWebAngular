@@ -1,0 +1,72 @@
+@import '../../../variables.scss';
+
+$mida_imatge_L: 140;
+$mida_imatge_M: 119;
+$mida_imatge_S: 121;
+
+.banners_inferiors {
+  position: relative;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
+  .banners_inferiors {
+    margin-top: $margin_S + px;
+    margin-left: $margin_S + px;
+    width: $requadre_width_S + px;
+    height: ($mida_imatge_S * 3) + 20 + px;
+  }
+  .banner_inferior_espai {
+    display: inline-grid;
+    width: 10px;
+  }
+  .banner_inferior {
+    display: inline-grid;
+    width: $mida_imatge_S + px;
+    height: $mida_imatge_S + px;
+    margin-bottom: $margin_S + px;
+  }
+  .banner_inferior > a > img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
+  .banners_inferiors {
+    margin-left: $margin_M + px;
+    height: $mida_imatge_M + px;
+  }
+  .banner_inferior_espai {
+    display: inline-block;
+    width: 10px;
+  }
+  .banner_inferior {
+    display: inline-block;
+    width: $mida_imatge_M + px;
+    height: $mida_imatge_M + px;
+    margin-bottom: $margin_S + px;
+  }
+  .banner_inferior > a > img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
+  .banners_inferiors {
+    margin-left: $margin_L + px;
+    height: $mida_imatge_L + px;
+  }
+  .banner_inferior_espai {
+    display: inline-grid;
+    width: 37px;
+  }
+  .banner_inferior {
+    display: inline-grid;
+    width: $mida_imatge_L + px;
+    height: $mida_imatge_L + px;
+    margin-bottom: $margin_S + px;
+  }
+  .banner_inferior > a > img {
+    width: 100%;
+  }
+}

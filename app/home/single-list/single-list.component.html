@@ -1,0 +1,98 @@
+<!-- REQUADRE VERTICAL -->
+
+<div class="requadre_small" [ngStyle]="{ 'background-color': InputColor }">
+  <div class="titol_box">
+    <div class="titol">
+      <!-- [routerLink]="GenLink" -->
+      <div (click)="ChangeMostroInfo()" class="titol_text">{{ InputTitol }} ({{ _QuantesActivitatsHaTrobat }})</div>
+    </div>
+    <div *ngIf="!_NoHiHaElements" class="fletxa_desplegable">
+      <img src="{{ !MostroInfo ? 'assets/img/FletxaAvallDesplegable.png' : 'assets/img/FletxaAmuntDesplegable.png' }}" />
+    </div>
+  </div>
+
+  <div class="quadricula" *ngIf="MostroInfo && _NoHiHaElements">
+    <div class="NoHiHaActivitatText">No hi ha cap activitat que concordi amb els filtres establerts.</div>
+  </div>
+
+  <div class="quadricula" *ngIf="MostroInfo && !_NoHiHaElements">
+    <swiper [config]="config_small">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width: 200px;" *ngFor="let D of _DadesActivitats" [routerLink]="D.linkDetall">
+          <div class="requadre_imatge">
+            <img src="{{ D.gURLImatge }}" class="requadre_imatge_img" />
+
+            <div class="requadre_text">
+              <div class="requadre_text_titol">{{ D.NomActivitat }}</div>
+              <div class="requadre_text_data">
+                <div class="requadre_text_data_calendari">
+                  <img src="/assets/img/icona_calendari.png" /> {{ D.gTextDiesHores.gTextDies }}
+                </div>
+              </div>
+              <div class="requadre_text_espai">
+                <div class="requadre_text_data_horari">
+                  <img src="/assets/img/icona_horari.png" />{{ D.gTextDiesHores.gTextHores }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
+  </div>
+</div>
+
+<!-- REQUADRE HORITZONTAL -->
+
+<div class="requadre" [ngStyle]="{ 'background-color': InputColor }">
+  <div class="titol_box">
+    <div class="titol">
+      <div [routerLink]="GenLink" class="titol_text">{{ InputTitol }}</div>
+    </div>
+  </div>
+  <div class="filter_box" *ngIf="AmbFiltre">
+    <img class="filter_box_img" src="/assets/img/FilterMusica.png" />
+    <img class="filter_box_img" src="/assets/img/FilterMusica.png" />
+    <img class="filter_box_img" src="/assets/img/FilterMusica.png" />
+  </div>
+
+  <div class="quadricula" *ngIf="_NoHiHaElements">
+    <div class="NoHiHaActivitatText">No hi ha cap activitat que concordi amb els filtres establerts.</div>
+  </div>
+
+  <div class="quadricula" *ngIf="!_NoHiHaElements">
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="width: 200px;" *ngFor="let D of _DadesActivitats" [routerLink]="D.linkDetall">
+          <div class="requadre_imatge">
+            <img src="{{ D.gURLImatge }}" class="requadre_imatge_img" />
+
+            <div class="requadre_text">
+              <div class="requadre_text_titol">{{ D.NomActivitat }}</div>
+              <div class="requadre_text_data">
+                <div class="requadre_text_data_calendari">
+                  <img src="/assets/img/icona_calendari.png" /> {{ D.gTextDiesHores.gTextDies }}
+                </div>
+              </div>
+              <div class="requadre_text_espai">
+                <div class="requadre_text_data_horari">
+                  <img src="/assets/img/icona_horari.png" /> {{ D.gTextDiesHores.gTextHores }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
+  </div>
+</div>

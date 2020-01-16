@@ -1,0 +1,57 @@
+<div class="requadre_doble"
+  [ngStyle]="{'background-color': InputColor}">
+  <div class="titol_box">
+    <div class="titol">
+      <div class="titol_text">{{InputTitol}}</div>
+    </div>
+  </div>
+  <div class="filter_box">
+    <img class="filter_box_img"
+      src="/assets/img/FilterMusica.png" />
+    <img class="filter_box_img"
+      src="/assets/img/FilterMusica.png" />
+    <img class="filter_box_img"
+      src="/assets/img/FilterMusica.png" />
+  </div>
+
+  <div class="quadricula">
+    <swiper [config]="config">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"
+          *ngFor="let D of _DadesActivitats"
+          [routerLink]="D.linkDetall">
+
+          <img src="{{D.gURLImatge}}"
+            class="requadre_imatge_img" />
+
+          <div class="requadre_text">
+            <div class="requadre_text_titol">{{D.NomActivitat}}</div>
+            <div class="requadre_text_data">
+              <div class="requadre_text_data_calendari">
+                <img src="/assets/img/icona_calendari.png"> {{D.gTextDies}}
+              </div>
+              <div class="requadre_text_data_horari">
+                <img src="/assets/img/icona_horari.png">{{D.gTextHores}}
+              </div>
+            </div>
+            <div class="requadre_text_espai">
+              <div class="requadre_text_data_espai">
+                <img src="/assets/img/icona_espai.png">{{D.gTextEspais}}
+              </div>
+              <div class="requadre_text_data_inscripcio">
+                <img src="/assets/img/icona_inscripcio.png"> {{D.gTextEntrada}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </swiper>
+  </div>
+
+
+</div>
