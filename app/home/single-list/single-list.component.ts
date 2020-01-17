@@ -36,6 +36,7 @@ export class SingleListComponent implements OnInit {
     slidesPerView: 3
   };
 
+  _ElementsPerPagina: number = 3;
   _DadesActivitats: ActivitatHome[] = [];
   _DadesActivitatsFiltrades: ActivitatHome[] = [];
   _PaginaActual: number = 1;
@@ -52,7 +53,7 @@ export class SingleListComponent implements OnInit {
     this._DadesActivitats = DA;
 
     this._DadesActivitats.forEach((item, index) => {
-      const i = Math.ceil((index + 1) / 3);
+      const i = Math.ceil((index + 1) / this._ElementsPerPagina);
       this._DadesActivitats[index].Pagina = i;
       this._MaxPaginaActual = i;
     });
@@ -70,7 +71,7 @@ export class SingleListComponent implements OnInit {
   FiltraDadesActivitats() {
     this._DadesActivitatsFiltrades = [];
     this._DadesActivitats.forEach(X => {
-      if (X.Pagina == this._PaginaActual) this._DadesActivitatsFiltrades.push(X);
+      if (X.Pagina <= this._PaginaActual) this._DadesActivitatsFiltrades.push(X);
     });
   }
 
