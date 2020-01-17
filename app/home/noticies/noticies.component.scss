@@ -1,33 +1,185 @@
-@import "../../../variables.scss";
+@import '../../../variables.scss';
 
 $alcada: 200;
 
-.noticies { position: relative; background-color: #264653; height: 200px; }
+.noticies {
+  position: relative;
+}
 
-.text_noticies_titol { font-size: 30px; color:white; font-weight:bold;}
-.text_noticies_text { color: white; font-weight: normal; }
+.text_noticies_titol {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+}
+.text_noticies_text {
+  color: white;
+  font-weight: normal;
+}
 
 @media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
-    .noticies { margin-top: $margin_S + px; width: $requadre_width_S + px; margin-left: $margin_S + px; }
-    .text_noticies_titol { font-size: 14px; }
-    .text_noticies_text { font-size: 10px; }
-    .requadre-text { margin-left: $margin_S + px; width: ($requadre_width_S - 2 * $margin_S) + px; height: 100%; }
-    .swiper-slide { height: ($alcada - $margin_S * 2) + px; margin-top: $margin_S + px; }
+  .noticies {
+    margin-top: $margin_S + px;
+    padding-left: $margin_S + px;
+    padding-right: $margin_S + px;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .swiper-wrapper {
+    background-color: #264653;
+  }
+
+  .swiper-slide {
+  }
+
+  .requadre-text {
+    display: block;
+    padding: 10px;
+  }
+
+  .text_noticies_titol {
+    font-size: 14px;
+  }
+  .text_noticies_text {
+    font-size: 10px;
+  }
+
+  .paginacio {
+    cursor: pointer;
+    display: flex;
+    background-color: #264653;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .PuntBlanc {
+    background-image: url('/assets/img/PuntBlanc.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .PuntGris {
+    background-image: url('/assets/img/PuntGris.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
-    .noticies { margin-top: $margin_M + px; width: $requadre_width_M + px; margin-left: $margin_M + px; }
-    .text_noticies_titol { font-size: 20px; }
-    .text_noticies_text { font-size:12px; }
-    .requadre-text { margin-left: $margin_M + px; width: ($requadre_width_M - 2 * $margin_M) + px; height: 100%; }
-    .swiper-slide { height: ($alcada - $margin_M * 2) + px; margin-top: $margin_M + px; }
+  .noticies {
+    margin-top: $margin_M + px;
+    padding-left: $margin_M + px;
+    padding-right: 23px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    z-index: 0px;
+  }
+
+  .swiper-wrapper {
+    background-color: #264653;
+  }
+
+  .swiper-slide {
+  }
+
+  .requadre-text {
+    display: relative;
+    padding: 10px;
+  }
+
+  .text_noticies_titol {
+    font-size: 14px;
+  }
+  .text_noticies_text {
+    font-size: 10px;
+    overflow: hidden;
+  }
+
+  .paginacio {
+    cursor: pointer;
+    display: flex;
+    background-color: #264653;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .PuntBlanc {
+    background-image: url('/assets/img/PuntBlanc.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .PuntGris {
+    background-image: url('/assets/img/PuntGris.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
 }
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
-    .noticies { margin-top: $margin_L + px; width: $requadre_width_L + px; margin-left: $margin_L + px; }
-    .text_noticies_titol { font-size: 20px; }
-    .text_noticies_text { font-size:12px; }
-    .requadre-text { margin-left: $margin_L + px; width: ($requadre_width_L - 2 * $margin_L) + px; height: 100%; }
-    .swiper-slide { height: ($alcada - $margin_L * 2) + px; margin-top: $margin_L + px; }
-}
+  .noticies {
+    margin-top: $margin_M + px;
+    padding-left: $margin_M + px;
+    padding-right: 23px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 40px;
+    z-index: 0px;
+  }
 
+  .swiper-wrapper {
+    background-color: #264653;
+  }
+
+  .swiper-slide {
+  }
+
+  .requadre-text {
+    display: relative;
+    padding: 10px;
+  }
+
+  .text_noticies_titol {
+    font-size: 16px;
+  }
+  .text_noticies_text {
+    font-size: 12px;
+    overflow: hidden;
+  }
+
+  .paginacio {
+    cursor: pointer;
+    display: flex;
+    background-color: #264653;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .PuntBlanc {
+    background-image: url('/assets/img/PuntBlanc.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .PuntGris {
+    background-image: url('/assets/img/PuntGris.png');
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

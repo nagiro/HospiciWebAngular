@@ -1,18 +1,13 @@
-<swiper [config]="config"
-  class="noticies">
+<div class="noticies">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"
-      *ngFor="let N of _Noticies">
+    <div class="swiper-slide">
       <div class="requadre-text">
-        <div class="text_noticies_titol">{{N.Titol}}</div>
-        <div class="text_noticies_text"
-          [innerHTML]="N.Text"></div>
+        <div class="text_noticies_titol">{{ _Noticies[_NoticiaActual].Titol }}</div>
+        <div class="text_noticies_text" [innerHTML]="_Noticies[_NoticiaActual].Text"></div>
       </div>
     </div>
   </div>
-  <!-- Add Pagination -->
-  <div class="swiper-pagination"></div>
-  <!-- Add Arrows -->
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</swiper>
+  <div class="paginacio">
+    <div [ngClass]="getClassBola(B)" *ngFor="let B of _Boletes" (click)="VesAPromocio(B)">&nbsp;</div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NoticiaHome } from 'src/app/model/noticies';
-import { SwiperOptions } from 'swiper';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-noticies',
@@ -8,27 +9,32 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./noticies.component.scss']
 })
 export class NoticiesComponent implements OnInit {
-
-  config: SwiperOptions = {
-    pagination: { el: '.swiper-pagination', clickable: false, type: 'bullets' },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    spaceBetween: 5,
-    initialSlide: 0,
-    slidesPerView: 1
-  };
-
   _Noticies: NoticiaHome[] = [];
+  _NoticiaActual = 0;
+  _Boletes = [];
 
   @Input() set InputDades(DA: NoticiaHome[]) {
     this._Noticies = DA;
-  };
-
-  constructor() { }
-
-  ngOnInit() {
+    for (let i = 0; i < this._Noticies.length; i++) this._Boletes.push(i);
   }
 
+  constructor() {}
+
+  VesAPromocio($eventId: number) {
+    this._NoticiaActual = $eventId;
+  }
+
+  getClassBola($idBola) {
+    return $idBola == this._NoticiaActual ? 'PuntGris' : 'PuntBlanc';
+  }
+
+  ngOnInit() {
+    interval(45000).subscribe(X => {
+      if (this._NoticiaActual >= this._Noticies.length) {
+        this._NoticiaActual = 0;
+      } else {
+        this._NoticiaActual++;
+      }
+    });
+  }
 }
