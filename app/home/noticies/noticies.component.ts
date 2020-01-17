@@ -15,6 +15,8 @@ export class NoticiesComponent implements OnInit {
 
   @Input() set InputDades(DA: NoticiaHome[]) {
     this._Noticies = DA;
+    this._Boletes = [];
+    this._NoticiaActual = 0;
     for (let i = 0; i < this._Noticies.length; i++) this._Boletes.push(i);
   }
 
