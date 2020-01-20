@@ -47,7 +47,9 @@ $width_M: 200px;
     position: relative;
     margin-left: $margin_M + px;
     height: 150px;
-    margin-top: $margin_L + px;
+    margin-top: $margin_M + px;
+    margin-right: $margin_M + px;
+    background-color: #231f20;
   }
   .footer_grisclar {
     float: left;
@@ -94,6 +96,8 @@ $width_M: 200px;
     margin-left: $margin_L + px;
     height: 150px;
     margin-top: $margin_L + px;
+    margin-right: $margin_M + px;
+    background-color: #231f20;
   }
   .footer_grisclar {
     float: left;

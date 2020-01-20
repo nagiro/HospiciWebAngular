@@ -5,24 +5,23 @@
   <div class="logo">
     <img src="/assets/img/LogoCCG.jpg" class="img_logo" />
   </div>
-  <div class="roller" *ngFor="let P of _Promocions; let i = index" (click)="Redirecciona(P)">
-    <div *ngIf="i + 1 == _PaginaActual">
-      <div class="banner-image">
-        <img src="{{ P.PROMOCIONS_IMATGE_L }}" />
+  <div class="roller">
+    <div class="banner-image">
+      <img src="{{ _Promocions[_PromocioActual].PROMOCIONS_IMATGE_L }}" />
+    </div>
+    <div class="text_banner">
+      <div *ngIf="_Promocions[_PromocioActual].mostraTextos" class="text_banner_titol">
+        {{ _Promocions[_PromocioActual].PROMOCIONS_TITOL }}
       </div>
-      <div class="text_banner">
-        <div *ngIf="P.mostraTextos" class="text_banner_titol">{{ P.PROMOCIONS_TITOL }}</div>
-        <div *ngIf="P.mostraTextos" class="text_banner_subtitol">{{ P.PROMOCIONS_SUBTITOL }}</div>
+      <div *ngIf="_Promocions[_PromocioActual].mostraTextos" class="text_banner_subtitol">
+        {{ _Promocions[_PromocioActual].PROMOCIONS_SUBTITOL }}
       </div>
     </div>
-  </div>
-  <div class="botons_banner" *ngIf="_TotalPromocions > 1">
-    <div class="botons_banner_caixa" *ngFor="let P of _Promocions; let i = index">
-      <div (click)="CanviPromocio(i)" class="botons_banner_boto">
-        <img *ngIf="i + 1 == _PaginaActual" src="/assets/img/PuntBlanc.png" />
-        <img *ngIf="i + 1 != _PaginaActual" src="/assets/img/PuntGris.png" />
+
+    <div class="grup-paginacio">
+      <div class="paginacio">
+        <div [ngClass]="getClassBola(B)" *ngFor="let B of _Boletes" (click)="VesAPromocio(B)">&nbsp;</div>
       </div>
-      &nbsp;
     </div>
   </div>
 </div>

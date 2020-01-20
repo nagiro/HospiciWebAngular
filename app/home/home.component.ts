@@ -83,7 +83,7 @@ export class HomeComponent implements OnInit {
         this.WebStructure.ActivitatDetall.fromAjax(OA);
 
         const img = this.WebStructure.ActivitatDetall.ActivitatDetall.gURLImatge;
-        this.WebStructure.Promocions = [new PromocioHome().fromApp(0, '', img, '')];
+        this.WebStructure.Promocions = [new PromocioHome().fromApp(0, '', '', img, '')];
 
         this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
         this.WebStructure.Menu = new MenuElement(OA['Menu']);
@@ -139,7 +139,6 @@ export class HomeComponent implements OnInit {
         this.WebStructure.ActivitatsCicles = [];
 
         this.WebStructure.Cicles = new ActivitatHomeArray(OA['Cicles']).getArray();
-        console.log(OA['Activitats']);
         this.WebStructure.Activitats = new ActivitatHomeArray(OA['Activitats']).getArray();
 
         this.WebStructure.Cicles.forEach(C => {

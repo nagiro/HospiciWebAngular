@@ -27,7 +27,7 @@ export class NoticiesComponent implements OnInit {
   }
 
   getClassBola($idBola) {
-    return $idBola == this._NoticiaActual ? 'PuntGris' : 'PuntBlanc';
+    return $idBola == this._NoticiaActual ? 'PuntBlanc' : 'PuntGris';
   }
 
   ngOnInit() {

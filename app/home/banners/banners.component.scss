@@ -9,7 +9,10 @@ $mida_imatge_M: 119;
 }
 
 @media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
-  .banners_inferiors {
+  .banners_inferiors_l {
+    display: none;
+  }
+  .banners_inferiors_s {
     display: flex;
     justify-content: space-between;
     margin-top: $margin_S + px;
@@ -26,9 +29,15 @@ $mida_imatge_M: 119;
 }
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
-  .banners_inferiors {
+  .banners_inferiors_s {
+    display: none;
+  }
+  .banners_inferiors_l {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $margin_M + px;
     margin-left: $margin_M + px;
-    height: $mida_imatge_M + px;
+    margin-right: $margin_M + px;
   }
   .banner_inferior_espai {
     display: inline-block;
@@ -46,9 +55,15 @@ $mida_imatge_M: 119;
 }
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
-  .banners_inferiors {
+  .banners_inferiors_s {
+    display: none;
+  }
+  .banners_inferiors_l {
+    display: flex;
+    justify-content: space-between;
+    margin-top: $margin_L + px;
     margin-left: $margin_L + px;
-    height: $mida_imatge_L + px;
+    margin-right: $margin_L + px;
   }
   .banner_inferior_espai {
     display: inline-grid;

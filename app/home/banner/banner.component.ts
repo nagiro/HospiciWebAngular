@@ -10,33 +10,41 @@ import { Router } from '@angular/router';
 })
 export class BannerComponent implements OnInit {
   _Promocions: PromocioHome[] = [];
-  _PromocioActual: PromocioHome = new PromocioHome();
-  _PaginaActual: number = 1;
-  _MaxPaginaActual: number = 1;
-  _TotalPromocions: number = 0;
+  _PromocioActual: number = 0;
+  _Boletes = [];
 
   @Input() set InputDades(DA: PromocioHome[]) {
     this._Promocions = DA;
-    this._PromocioActual = this._Promocions[0] ? this._Promocions[0] : new PromocioHome();
-    this._MaxPaginaActual = DA.length;
-    const source = interval(3000);
-    source.subscribe(X => {
-      this.CanviPromocio(X % this._MaxPaginaActual);
+    this._PromocioActual = 0;
+    this._Boletes = [];
+    for (let i = 0; i < this._Promocions.length; i++) this._Boletes.push(i);
+
+    interval(1003000).subscribe(X => {
+      if (this._Promocions.length == this._PromocioActual) {
+        this._PromocioActual = 0;
+      } else {
+        this._PromocioActual++;
+      }
     });
-    this._TotalPromocions = this._Promocions.length;
-    console.log(this._Promocions);
+
+    console.log('Promocions', this._Promocions);
+    console.log(this._PromocioActual);
   }
 
   constructor(private R: Router) {}
 
   ngOnInit() {}
 
-  CanviPromocio(index: number) {
-    this._PromocioActual = this._Promocions[index];
-    this._PaginaActual = index + 1;
+  VesAPromocio($eventId: number) {
+    this._PromocioActual = $eventId;
   }
 
-  Redirecciona(P: PromocioHome) {
+  getClassBola($idBola) {
+    return $idBola == this._PromocioActual ? 'PuntGris' : 'PuntBlanc';
+  }
+
+  Redirecciona(idPromocio: number) {
+    let P = this._Promocions[idPromocio];
     if (P.PROMOCIONS_URL) this.R.navigateByUrl(P.PROMOCIONS_URL);
     else this.R.navigate(P.linkRouter);
   }

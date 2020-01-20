@@ -20,9 +20,25 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CalendariComponent } from './calendari/calendari.component';
 
 @NgModule({
-  declarations: [HomeComponent, SingleListComponent, DoubleListComponent, BannerComponent, NoticiesComponent, BarrasuperiorComponent, BannersComponent, FooterComponent, LlistatCiclesComponent, LlistatActivitatsComponent, DetallComponent, BreadcumbComponent, MenuComponent, StaticPageComponent, CalendariComponent],
+  declarations: [
+    HomeComponent,
+    SingleListComponent,
+    DoubleListComponent,
+    BannerComponent,
+    NoticiesComponent,
+    BarrasuperiorComponent,
+    BannersComponent,
+    FooterComponent,
+    LlistatCiclesComponent,
+    LlistatActivitatsComponent,
+    DetallComponent,
+    BreadcumbComponent,
+    MenuComponent,
+    StaticPageComponent,
+    CalendariComponent
+  ],
   imports: [CommonModule, HttpClientModule, RouterModule, NgxUsefulSwiperModule],
   exports: [LlistatCiclesComponent, LlistatActivitatsComponent, DetallComponent],
   providers: []
 })
-export class HomeModule { }
+export class HomeModule {}

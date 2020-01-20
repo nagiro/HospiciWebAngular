@@ -1,17 +1,19 @@
-<div class="requadre_titol">
-  <div class="titol">
-    {{ ActivitatDetall.ActivitatDetall.Activitats_TitolMig }}
+<div class="bloc-detall">
+  <div class="requadre_titol">
+    <div class="titol">
+      {{ ActivitatDetall.ActivitatDetall.Activitats_TitolMig }}
+    </div>
+    <div class="dates" [innerHtml]="ActivitatDetall.ActivitatHoraris.LlistatText"></div>
   </div>
-  <div class="dates" [innerHtml]="ActivitatDetall.ActivitatHoraris.LlistatText"></div>
-</div>
-<div class="requadre_detall">
-  <!-- <div class="titol_text"
-    [innerHTML]="ActivitatDetall.ActivitatDetall.A_TMIG"></div> -->
-  <div class="text" [innerHTML]="ActivitatDetall.ActivitatDetall.Activitats_DescripcioMig"></div>
-</div>
-<div class="requadre_info">
-  <div class="titol_text">INFORMACIÓ PRÀCTICA</div>
-  <div class="text" [innerHTML]="ActivitatDetall.ActivitatDetall.Activitats_InformacioPractica"></div>
+  <div class="requadre_detall">
+    <!-- <div class="titol_text"
+      [innerHTML]="ActivitatDetall.ActivitatDetall.A_TMIG"></div> -->
+    <div class="text" [innerHTML]="ActivitatDetall.ActivitatDetall.Activitats_DescripcioMig"></div>
+  </div>
+  <div class="requadre_info">
+    <div class="titol_text">INFORMACIÓ PRÀCTICA</div>
+    <div class="text" [innerHTML]="ActivitatDetall.ActivitatDetall.Activitats_InformacioPractica"></div>
+  </div>
 </div>
 
 <app-single-list
