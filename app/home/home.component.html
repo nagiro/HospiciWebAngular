@@ -23,7 +23,10 @@
 
     <app-detall *ngIf="WebStructure.Mode.detall" [ActivitatDetall]="WebStructure.ActivitatDetall"></app-detall>
 
-    <app-noticies *ngIf="WebStructure.Mode.noticies" [InputDades]="WebStructure.Noticies"></app-noticies>
+    <app-noticies
+      *ngIf="WebStructure.Mode.noticies && WebStructure.Noticies.length > 0"
+      [InputDades]="WebStructure.Noticies"
+    ></app-noticies>
 
     <app-single-list
       [InputTitol]="'DIVULGACIÓ'"

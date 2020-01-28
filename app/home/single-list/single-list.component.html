@@ -1,10 +1,10 @@
 <!-- REQUADRE VERTICAL -->
 
 <div class="requadre_small" [ngStyle]="{ 'background-color': InputColor }">
-  <div class="titol_box">
-    <div class="titol">
+  <div class="titol_box" (click)="ChangeMostroInfo()">
+    <div class="titol" [routerLink]="GenLink">
       <!-- [routerLink]="GenLink" -->
-      <div (click)="ChangeMostroInfo()" class="titol_text">{{ InputTitol }} ({{ _QuantesActivitatsHaTrobat }})</div>
+      <div class="titol_text">{{ InputTitol }} ({{ _QuantesActivitatsHaTrobat }})</div>
     </div>
     <div *ngIf="!_NoHiHaElements" class="fletxa_desplegable">
       <img src="{{ !MostroInfo ? 'assets/img/FletxaAvallDesplegable.png' : 'assets/img/FletxaAmuntDesplegable.png' }}" />

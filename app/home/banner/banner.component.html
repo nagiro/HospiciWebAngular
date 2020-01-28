@@ -9,7 +9,7 @@
     <div class="banner-image">
       <img src="{{ _Promocions[_PromocioActual].PROMOCIONS_IMATGE_L }}" />
     </div>
-    <div class="text_banner">
+    <div class="text_banner" (click)="Redirecciona(_PromocioActual)">
       <div *ngIf="_Promocions[_PromocioActual].mostraTextos" class="text_banner_titol">
         {{ _Promocions[_PromocioActual].PROMOCIONS_TITOL }}
       </div>

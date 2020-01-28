@@ -7,7 +7,6 @@ import { ActivitatHome, ActivitatsCicle } from 'src/app/model/activitat';
   styleUrls: ['./llistat-cicles.component.scss']
 })
 export class LlistatCiclesComponent implements OnInit {
-
   _DadesActivitatsCicle: ActivitatsCicle[] = [];
   QuantsCiclesHiHa: number = 0;
 
@@ -17,15 +16,9 @@ export class LlistatCiclesComponent implements OnInit {
     console.log(this._DadesActivitatsCicle);
   }
 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  getActivitats(cicle: ActivitatHome) {
-
-
-  }
-
+  getActivitats(cicle: ActivitatHome) {}
 }

@@ -76,7 +76,7 @@ $alcada: 200;
     padding-left: $margin_M + px;
     padding-right: $margin_M + px;
     width: 100%;
-    height: 200px;
+    min-height: 150px;
     margin-bottom: 40px;
     z-index: 0px;
   }
@@ -134,7 +134,7 @@ $alcada: 200;
     padding-left: $margin_L + px;
     padding-right: $margin_L + px;
     width: 100%;
-    height: 200px;
+    min-height: 150px;
     margin-bottom: 55px;
     z-index: 0px;
   }

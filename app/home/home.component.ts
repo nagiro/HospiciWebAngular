@@ -153,6 +153,7 @@ export class HomeComponent implements OnInit {
         this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
         this.WebStructure.Menu = new MenuElement(OA['Menu']);
         this.WebStructure.Mode.setModeLlistatCicles();
+        console.log('WebStructure', this.WebStructure);
       });
   }
 
