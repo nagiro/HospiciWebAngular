@@ -1,37 +1,113 @@
-@import "../../../variables.scss";
+@import '../../../variables.scss';
 
 $increment_marge_superior: 20;
+$mida_imatge_L: 140;
+$mida_imatge_M: 119;
 
-.text  {  position:relative; }
-
+.text {
+  position: relative;
+}
 
 @media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
-    .text  {
-        margin-left: $margin_S + px;
-        margin-top: ($margin_S + $increment_marge_superior) + px;
-        width: $requadre_width_S + px;
-        margin-bottom: $margin_S + px;
-        font-size: $font_size_S + px;
-    }
-
+  .text {
+    margin-left: $margin_S + px;
+    margin-top: ($margin_S + $increment_marge_superior) + px;
+    width: $requadre_width_S + px;
+    margin-bottom: $margin_S + px;
+    font-size: $font_size_S + px;
+  }
+  .links {
+    padding-left: $margin_M + px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: $margin_M + px;
+  }
+  .link {
+    width: 24%;
+    padding-top: 20%;
+    margin-bottom: 30px;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+  }
+  .titol {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-size: $font_size_S + 2 + px;
+  }
 }
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
-    .text  {    margin-left:$margin_M + px;
-                margin-top: ($margin_M + $increment_marge_superior) + px;
-                width: $requadre_width_M + px;
-                margin-bottom: $margin_M + px;
-                font-size: $font_size_M + px;
-            }
+  .text {
+    margin-left: $margin_M + px;
+    margin-top: ($margin_M + $increment_marge_superior) + px;
+    width: $requadre_width_M + px;
+    margin-bottom: $margin_M + px;
+    font-size: $font_size_M + px;
+  }
+  .links {
+    padding-left: $margin_M + px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: $margin_M + px;
+  }
+  .link {
+    width: 24%;
+    padding-top: 20%;
+    margin-bottom: 30px;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+  }
+  .titol {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: $font_size_M + 2 + px;
+  }
 }
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
-    .text  {    margin-left:$margin_L + px;
-                margin-top: ($margin_L + $increment_marge_superior) + px;
-                width: $requadre_width_L + px;
-                margin-bottom: $margin_L + px;
-                font-size: $font_size_L + px;
-            }
-
+  .text {
+    margin-left: $margin_L + px;
+    margin-top: ($margin_L + $increment_marge_superior) + px;
+    width: $requadre_width_L + px;
+    margin-bottom: $margin_L + px;
+    font-size: $font_size_L + px;
+  }
+  .links {
+    padding-left: $margin_L + px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: $margin_L + px;
+  }
+  .link {
+    width: 24%;
+    padding-top: 20%;
+    margin-bottom: 30px;
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+  }
+  .titol {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-size: $font_size_L + 2 + px;
+  }
 }
-

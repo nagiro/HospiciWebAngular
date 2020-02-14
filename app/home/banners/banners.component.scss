@@ -14,17 +14,30 @@ $mida_imatge_M: 119;
   }
   .banners_inferiors_s {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: $margin_S + px;
     margin-left: $margin_S + px;
     margin-right: $margin_S + px;
   }
 
   .banner_inferior {
-    width: 32%;
+    position: relative;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 48%;
+    padding-top: 12%;
+    margin-bottom: 10px;
   }
-  .banner_inferior > a > img {
-    width: 100%;
+  .banner_inferior > a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 }
 
@@ -39,18 +52,22 @@ $mida_imatge_M: 119;
     margin-left: $margin_M + px;
     margin-right: $margin_M + px;
   }
+  .banner_inferior > a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+  }
   .banner_inferior_espai {
-    display: inline-block;
+    display: inline-grid;
     width: 10px;
   }
   .banner_inferior {
     display: inline-block;
     width: $mida_imatge_M + px;
     height: $mida_imatge_M + px;
-    margin-bottom: $margin_S + px;
-  }
-  .banner_inferior > a > img {
-    width: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -64,6 +81,14 @@ $mida_imatge_M: 119;
     margin-top: $margin_L + px;
     margin-left: $margin_L + px;
     margin-right: $margin_L + px;
+  }
+  .banner_inferior > a {
+    padding-top: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+    color: black;
+
+    font-size: 20px;
   }
   .banner_inferior_espai {
     display: inline-grid;

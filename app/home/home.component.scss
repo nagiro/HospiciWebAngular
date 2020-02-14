@@ -7,7 +7,6 @@
   }
   .page {
     margin: 0 auto;
-    // max-width: $amplada_inicial_S + px;
     height: auto;
     background-color: white;
     position: relative;
@@ -19,13 +18,16 @@
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
   body {
-    background-color: #266653;
+    background-color: white;
   }
   .page {
     margin: 0 auto;
     max-width: $amplada_inicial_M + px;
     height: auto;
     background-color: white;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
     position: relative;
   }
   .barra_superior {
@@ -35,13 +37,16 @@
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
   body {
-    background-color: #266653;
+    background-color: white;
   }
   .page {
     margin: 0 auto;
     max-width: $amplada_inicial_L + px;
     height: auto;
     background-color: white;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
     position: relative;
   }
   .barra_superior {

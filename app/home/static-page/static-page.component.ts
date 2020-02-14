@@ -7,16 +7,13 @@ import { StaticPage } from 'src/app/model/static-page';
   styleUrls: ['./static-page.component.scss']
 })
 export class StaticPageComponent implements OnInit {
-
   _page: StaticPage = new StaticPage();
 
   @Input() set InputDades(Page: StaticPage) {
     this._page = Page;
   }
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

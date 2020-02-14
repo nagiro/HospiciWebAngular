@@ -13,7 +13,6 @@ export class LlistatCiclesComponent implements OnInit {
   @Input() set InputDades(DA: ActivitatsCicle[]) {
     this._DadesActivitatsCicle = DA;
     this.QuantsCiclesHiHa = this._DadesActivitatsCicle.length;
-    console.log(this._DadesActivitatsCicle);
   }
 
   constructor() {}

@@ -1,26 +1,19 @@
-<div class="requadre"
-  *ngFor="let ActivitatsPerTipus of _DadesActivitatsPerTipus">
-  <div class="TitolCicle">{{ActivitatsPerTipus.TipusNom}}</div>
+<div class="requadre" *ngFor="let ActivitatsPerTipus of _DadesActivitatsPerTipus">
+  <div class="TitolCicle">{{ ActivitatsPerTipus.TipusNom }}</div>
 
-  <div class="quadricula"
-    *ngFor="let ActivitatRow of ActivitatsPerTipus.Activitats">
-
-    <div class="requadre_imatge"
-      *ngFor="let Activitat of ActivitatRow"
-      [routerLink]="Activitat.linkDetall">
-
-      <img src="{{Activitat.gURLImatge}}"
-        class="requadre_imatge_img" />
+  <div class="quadricula" *ngFor="let ActivitatRow of ActivitatsPerTipus.Activitats">
+    <div class="requadre_imatge" *ngFor="let Activitat of ActivitatRow" [routerLink]="Activitat.linkDetall">
+      <img src="{{ Activitat.gURLImatge }}" class="requadre_imatge_img" />
       <div class="requadre_text">
-        <div class="requadre_text_titol">{{Activitat.NomActivitat}}</div>
+        <div class="requadre_text_titol">{{ Activitat.NomActivitat }}</div>
         <div class="requadre_text_data">
           <div class="requadre_text_data_calendari">
-            <img src="/assets/img/icona_calendari.png"> {{Activitat.gTextDiesHores.gTextDies}}
+            <img src="/assets/img/icona_calendari.png" /> {{ Activitat.gTextDiesHores.gTextDies }}
           </div>
         </div>
         <div class="requadre_text_espai">
           <div class="requadre_text_data_horari">
-            <img src="/assets/img/icona_horari.png">{{Activitat.gTextDiesHores.gTextHores}}
+            <img src="/assets/img/icona_horari.png" />{{ Activitat.gTextDiesHores.gTextHores }}
           </div>
         </div>
       </div>

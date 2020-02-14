@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../shared/api.service';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { ActivitatHome, ActivitatHomeArray, ActivitatsCicle, ActivitatsPerTipus, ActivitatDetall } from '../model/activitat';
+import {
+  ActivitatHome,
+  ActivitatHomeArray,
+  ActivitatsCicle,
+  ActivitatsPerTipus,
+  ActivitatDetall,
+  FiltreActivitat
+} from '../model/activitat';
 import { NoticiaHome, NoticiesHomeArray } from '../model/noticies';
 import { PromocioHome, PromocioHomeArray } from '../model/promocio';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
@@ -41,14 +48,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.route.url.subscribe((URL: UrlSegment[]) => {
-      switch (URL[0].toString()) {
+      let FirstParameter = URL[0] ? URL[0].toString() : '';
+
+      switch (FirstParameter) {
         case 'cicles': {
           this.ExecutaCicles(URL);
           this.Mode.setModeLlistatCicles();
           break;
         }
         case 'activitats': {
-          this.ExecutaActivitats(URL);
+          this.ExecutaActivitats(URL, []);
           this.Mode.setModeLlistatActivitats();
           break;
         }
@@ -61,12 +70,12 @@ export class HomeComponent implements OnInit {
           this.ExecutaStaticPage(URL);
           break;
         }
-        case 'home': {
-          this.ExecutaHome();
-          break;
-        }
         case 'calendari': {
           this.ExecutaCalendari();
+          break;
+        }
+        default: {
+          this.ExecutaHome();
           break;
         }
       }
@@ -80,6 +89,8 @@ export class HomeComponent implements OnInit {
     this.http
       .get<ActivitatDetall>(this.api.apiURL + '/getActivitats', { params: H })
       .subscribe((OA: any) => {
+        this.WebStructure = new Webmodel();
+
         this.WebStructure.ActivitatDetall.fromAjax(OA);
 
         const img = this.WebStructure.ActivitatDetall.ActivitatDetall.gURLImatge;
@@ -98,7 +109,9 @@ export class HomeComponent implements OnInit {
     this.http
       .get<StaticPage>(this.api.apiURL + '/getActivitats', { params: H })
       .subscribe((OA: any) => {
-        this.WebStructure.StaticPage.fromAjax(OA['Pagina']);
+        this.WebStructure = new Webmodel();
+
+        this.WebStructure.StaticPage.fromAjax(OA['Pagina'], OA['Fills']);
         const img = this.WebStructure.StaticPage.ImgXLUrl;
         this.WebStructure.Promocions = [new PromocioHome().fromApp(0, '', img, '')];
         this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
@@ -107,25 +120,29 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  ExecutaActivitats(URL: UrlSegment[]) {
-    let idA: number = Number(URL[1].toString());
+  ExecutaActivitats(URL: UrlSegment[] = [], Filtres: FiltreActivitat[]) {
     let H = new HttpParams().set('mode', 'activitats');
+
+    if (Filtres.length > 0) H = H.append('Filtres', JSON.stringify(Filtres));
+
+    let idA: number = 0;
+    if (URL.length > 0) idA = Number(URL[1].toString());
     H = H.append('idTipus', String(idA));
 
-    this.http
-      .get<any>(this.api.apiURL + '/getActivitats', { params: H })
-      .subscribe((OA: any) => {
-        this.WebStructure.Promocions = [];
-        this.WebStructure.ActivitatsPerTipus = [];
+    this.http.post<any>(this.api.apiURL + '/getActivitats', H).subscribe((OA: any) => {
+      this.WebStructure = new Webmodel();
 
-        let TA = new TipusActivitatArray().fromAjax(OA['TipusActivitats']).getKey(Number(idA));
-        this.WebStructure.Activitats = new ActivitatHomeArray(OA['Activitats']).getArray();
-        this.WebStructure.ActivitatsPerTipus.push(new ActivitatsPerTipus(idA, TA.tipusDesc, this.WebStructure.Activitats));
-        this.WebStructure.Promocions.push(new PromocioHome().fromApp(0, 'Totes les activitats', '', '', '', []));
-        this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
-        this.WebStructure.Menu = new MenuElement(OA['Menu']);
-        this.WebStructure.Mode.setModeLlistatActivitats();
-      });
+      this.WebStructure.Promocions = [];
+      this.WebStructure.ActivitatsPerTipus = [];
+
+      let TA = new TipusActivitatArray().fromAjax(OA['TipusActivitats']).getKey(Number(idA));
+      this.WebStructure.Activitats = new ActivitatHomeArray(OA['Activitats']).getArray();
+      this.WebStructure.ActivitatsPerTipus.push(new ActivitatsPerTipus(idA, TA.tipusDesc, this.WebStructure.Activitats));
+      this.WebStructure.Promocions.push(new PromocioHome().fromApp(0, 'Totes les activitats', '', '', '', []));
+      this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
+      this.WebStructure.Menu = new MenuElement(OA['Menu']);
+      this.WebStructure.Mode.setModeLlistatActivitats();
+    });
   }
 
   ExecutaCicles(URL: UrlSegment[]) {
@@ -135,6 +152,7 @@ export class HomeComponent implements OnInit {
     this.http
       .get<any>(this.api.apiURL + '/getActivitats', { params: H })
       .subscribe((OA: any) => {
+        this.WebStructure = new Webmodel();
         this.WebStructure.Promocions = [];
         this.WebStructure.ActivitatsCicles = [];
 
@@ -153,20 +171,18 @@ export class HomeComponent implements OnInit {
         this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
         this.WebStructure.Menu = new MenuElement(OA['Menu']);
         this.WebStructure.Mode.setModeLlistatCicles();
-        console.log('WebStructure', this.WebStructure);
       });
   }
 
-  ExecutaHome(FiltreData = '') {
+  ExecutaHome() {
     let H = new HttpParams().set('mode', 'home');
-    if (FiltreData.length > 0) H = H.set('FiltreData', FiltreData);
-
     this.http
       .get<any>(this.api.apiURL + '/getActivitats', { params: H })
       .subscribe((OA: any) => {
         this.WebStructure = new Webmodel();
         this.WebStructure.Cicles = new ActivitatHomeArray(OA['Cicles']).getArray();
         this.WebStructure.Exposicions = new ActivitatHomeArray(OA['Exposicions']).getArray();
+        this.WebStructure.Petita = new ActivitatHomeArray(OA['Petita']).getArray();
         this.WebStructure.Musica = new ActivitatHomeArray(OA['Musica']).getArray();
         this.WebStructure.ProperesActivitats = new ActivitatHomeArray(OA['ProperesActivitats']).getArray();
         this.WebStructure.Noticies = new NoticiesHomeArray(OA['Noticies']).getArray();
@@ -189,8 +205,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  AplicaFiltre($event) {
-    console.log($event.toString());
-    this.ExecutaHome($event.toString());
+  AplicaFiltre($event: FiltreActivitat[]) {
+    this.ExecutaActivitats([], $event);
   }
 }

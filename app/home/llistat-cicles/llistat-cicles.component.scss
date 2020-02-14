@@ -141,7 +141,8 @@ $espaientrefotos_S: 25;
     width: $requadre_width_M + px;
   }
   .quadricula {
-    height: $imatge_height_M + px;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 25px;
   }
 
@@ -149,6 +150,8 @@ $espaientrefotos_S: 25;
     display: inline-block;
     position: relative;
     width: $imatge_width_M + px;
+    height: $imatge_width_M + px;
+    margin-bottom: $espaientrefotos_M + px;
     margin-left: $espaientrefotos_M + px;
   }
   .requadre_imatge_img {
@@ -196,15 +199,16 @@ $espaientrefotos_S: 25;
     width: $requadre_width_L + px;
   }
   .quadricula {
-    height: $imatge_height_L + px;
     margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .requadre_imatge {
-    display: inline-block;
-    position: relative;
     width: $imatge_width_L + px;
+    height: $imatge_height_L + px;
     margin-left: $espaientrefotos_L + px;
+    margin-bottom: $espaientrefotos_L + px;
   }
   .requadre_imatge_img {
   }

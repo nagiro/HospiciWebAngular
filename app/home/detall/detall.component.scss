@@ -11,10 +11,14 @@ $requadre_color: $color_fons_detall;
   background-color: inherit;
 }
 .requadre_info {
-  background-color: $requadre_color;
+  background-color: white;
+  border: 1px solid #999999;
+  font-weight: normal;
 }
 .requadre_detall {
-  background-color: $requadre_color;
+  background-color: white;
+  border: 1px solid #999999;
+  font-weight: normal;
 }
 
 .titol {

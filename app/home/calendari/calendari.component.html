@@ -34,9 +34,17 @@
     <div class="cal-mesos-fletxa" (click)="GoMes(false)">></div>
   </div>
   <div class="control-dies">
-    <div [ngClass]="D.C" *ngFor="let D of DiesMes" (click)="AplicaFiltre(D.DiaNumero)">
+    <div [ngClass]="D.C" *ngFor="let D of DiesMes" (click)="AplicaFiltre('DATA_INICIAL', D.DiaNumero)">
       <div class="cal-dia-text">{{ D.DiaText }}</div>
       <div class="cal-dia-numero">{{ D.DiaNumero }}</div>
     </div>
+  </div>
+</div>
+
+<div class="box-mes-filtres">
+  <div class="mes-filtres">Més filtres</div>
+  <div class="mes-filtres-resta">
+    <div class="mes-filtres-resta-element" (click)="AplicaFiltre('ID_TIPUS_ACTIVITAT', 45)">Exposicions</div>
+    <div class="mes-filtres-resta-element" (click)="AplicaFiltre('ID_TIPUS_ACTIVITAT', 46)">Música</div>
   </div>
 </div>

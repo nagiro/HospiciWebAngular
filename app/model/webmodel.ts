@@ -13,6 +13,7 @@ export class Webmodel {
   Activitats: ActivitatHome[] = [];
   Exposicions: ActivitatHome[] = [];
   Musica: ActivitatHome[] = [];
+  Petita: ActivitatHome[] = [];
   Cicles: ActivitatHome[] = [];
   ProperesActivitats: ActivitatHome[] = [];
   Noticies: NoticiaHome[] = [];

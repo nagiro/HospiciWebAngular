@@ -26,9 +26,6 @@ export class BannerComponent implements OnInit {
         this._PromocioActual++;
       }
     });
-
-    console.log('Promocions', this._Promocions);
-    console.log(this._PromocioActual);
   }
 
   constructor(private R: Router) {}
@@ -40,7 +37,7 @@ export class BannerComponent implements OnInit {
   }
 
   getClassBola($idBola) {
-    return $idBola == this._PromocioActual ? 'PuntGris' : 'PuntBlanc';
+    return $idBola == this._PromocioActual ? 'PuntBlanc' : 'PuntGris';
   }
 
   Redirecciona(idPromocio: number) {

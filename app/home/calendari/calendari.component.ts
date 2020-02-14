@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FiltreActivitat } from 'src/app/model/activitat';
 
 @Component({
   selector: 'app-calendari',
@@ -12,7 +13,8 @@ export class CalendariComponent implements OnInit {
   AnyText = '';
   AnyNumero = 0;
   QuantsDiesMes = 0;
-  @Output() FiltreDia: EventEmitter<string> = new EventEmitter();
+  _Filtres: FiltreActivitat[] = [];
+  @Output() Filtres: EventEmitter<FiltreActivitat[]> = new EventEmitter();
 
   DiesMes: { DiaText: string; DiaNumero: number; C: any[] }[] = [];
   DiesMesFiles: any[] = [];
@@ -134,9 +136,19 @@ export class CalendariComponent implements OnInit {
     }
   }
 
-  AplicaFiltre(Dia) {
-    let Data = this.AnyNumero + '-' + (this.MesNumero + 1) + '-' + Dia;
-    this.FiltreDia.emit(Data);
+  AplicaFiltre(type: string, key: string) {
+    switch (type) {
+      case FiltreActivitat.DATA_INICIAL: {
+        let Data = this.AnyNumero + '-' + (this.MesNumero + 1) + '-' + key;
+        this._Filtres.push(new FiltreActivitat(type, Data));
+        break;
+      }
+      case FiltreActivitat.ID_TIPUS_ACTIVITAT: {
+        this._Filtres.push(new FiltreActivitat(type, key));
+        break;
+      }
+    }
+    this.Filtres.emit(this._Filtres);
   }
 
   ngOnInit() {}

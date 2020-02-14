@@ -20,7 +20,9 @@ $espaientrefotos_S: 25;
   height: auto;
 }
 .quadricula {
-  position: relative;
+  // position: relative;
+  display: flex;
+  flex-wrap: wrap;
   background-color: inherit;
   width: 100%;
 }
@@ -73,26 +75,31 @@ $espaientrefotos_S: 25;
     position: relative;
     margin-top: ($margin_S * 2) + px;
     margin-bottom: $margin_S + px;
-    margin-left: $margin_S + px;
-    width: $requadre_width_S + px;
+    padding-left: $margin_S + px;
+    padding-right: $margin_S + px;
+    width: 100%;
   }
   .quadricula {
-    margin-top: 25px;
+    position: relative;
   }
 
   .requadre_imatge {
     width: 100%;
-    height: $imatge_height_S + px;
+    padding-top: 100%;
     margin-bottom: $margin_S + px;
+    position: relative;
   }
   .requadre_imatge_img {
-    height: $imatge_height_S + px;
+    position: absolute;
+    top: 0px;
     width: 100%;
   }
 
   .requadre_text {
-    width: ($requadre_text_S + 10) + px;
-    margin-left: 10px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    position: absolute;
   }
   .requadre_text_titol {
     font-size: 12px;

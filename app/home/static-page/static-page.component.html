@@ -1,2 +1,13 @@
-<div class="text"
-  [innerHTML]="_page.Text"></div>
+<div class="links">
+  <div
+    class="link"
+    *ngFor="let F of _page.Fills"
+    [style.background-image]="'url(http://www.casadecultura.cat/images/front/' + F.Nodes_idNodes + '-L.jpg)'"
+    [routerLink]="['/pagina/' + F.Nodes_idNodes + '/' + F.Nodes_TitolMenu]"
+  >
+    <div class="titol">
+      {{ F.Nodes_TitolMenu }}
+    </div>
+  </div>
+</div>
+<div class="text" [innerHTML]="_page.Text"></div>

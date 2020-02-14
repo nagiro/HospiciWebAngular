@@ -14,6 +14,10 @@ $TotalMesosS: $MesosS + $FletxaMesosS * 2;
     clear: both;
   }
 
+  .box-mes-filtres {
+    display: none;
+  }
+
   .titol_filtres {
     padding-top: 8px;
     padding-left: 10px;
@@ -97,13 +101,42 @@ $TotalMesosM: $MesosM + $FletxaMesosM * 2;
   .requadre_filtres {
     display: none;
   }
+
   .calendari {
-    margin-left: $margin_M + px;
-    margin-right: $margin_M + 1 + px;
+    padding-left: $margin_M + px;
+    padding-right: $margin_M + px;
     background-color: white;
-    height: 30px;
+    height: 40px;
     display: flex;
   }
+
+  .box-mes-filtres {
+    margin-left: $margin_M + px;
+    background-color: black;
+    margin-right: $margin_M + px;
+    display: flex;
+  }
+  .mes-filtres {
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    width: 117px;
+    color: white;
+    cursor: pointer;
+  }
+  .mes-filtres-resta {
+    width: 100%;
+    background-color: #cccccc;
+    border-top: 1px solid black;
+    display: flex;
+  }
+  .mes-filtres-resta-element {
+    padding: 5px;
+    color: black;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
   .control-dies {
     display: flex;
     width: ($requadre_width_M - $TotalMesosM) + px;
@@ -126,18 +159,20 @@ $TotalMesosM: $MesosM + $FletxaMesosM * 2;
     height: 100%;
     background-color: rgb(106, 152, 196);
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
   }
   .cal-dia {
-    font-size: 10px;
-    width: 21px;
+    font-size: 12px;
+    width: 16px;
     cursor: pointer;
   }
   .cal-dia-normal {
     background-color: white;
+    font-size: 12px;
   }
   .cal-dia-festa {
-    background-color: gray;
+    background-color: #c5d3e1;
+    font-size: 12px;
   }
   .cal-dia-text {
     text-align: center;
@@ -154,6 +189,7 @@ $TotalMesosL: $MesosL + $FletxaMesosL * 2;
   .requadre_filtres {
     display: none;
   }
+
   .calendari {
     margin-left: $margin_L + px;
     margin-right: $margin_L + 1 + px;
@@ -161,6 +197,34 @@ $TotalMesosL: $MesosL + $FletxaMesosL * 2;
     height: 40px;
     display: flex;
   }
+
+  .box-mes-filtres {
+    margin-left: 30px;
+    background-color: black;
+    margin-right: 30px;
+    display: flex;
+  }
+  .mes-filtres {
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    width: 151px;
+    color: white;
+    cursor: pointer;
+  }
+  .mes-filtres-resta {
+    width: 100%;
+    background-color: #cccccc;
+    border-top: 1px solid black;
+    display: flex;
+  }
+  .mes-filtres-resta-element {
+    padding: 5px;
+    color: black;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
   .control-dies {
     display: flex;
     width: ($requadre_width_L - $TotalMesosL) + px;
@@ -195,7 +259,7 @@ $TotalMesosL: $MesosL + $FletxaMesosL * 2;
     font-size: 14px;
   }
   .cal-dia-festa {
-    background-color: gray;
+    background-color: #c5d3e1;
     font-size: 14px;
   }
   .cal-dia-text {

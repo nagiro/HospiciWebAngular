@@ -1,6 +1,7 @@
 import { PromocioHome } from './promocio';
 import { environment } from 'src/environments/environment';
 import { HorariDetall, HorariDetallDates } from './horari';
+import { ThrowStmt } from '@angular/compiler';
 
 export class Activitat {}
 
@@ -73,6 +74,18 @@ export class ActivitatDetall {
     this.ActivitatHoraris = new HorariDetallDates(OA['Horaris']);
     console.log(OA['Horaris']);
     console.log(this.ActivitatHoraris);
+  }
+}
+
+export class FiltreActivitat {
+  public static readonly DATA_INICIAL = 'DATA_INICIAL';
+  public static readonly ID_TIPUS_ACTIVITAT = 'ID_TIPUS_ACTIVITAT';
+
+  type: string = '';
+  key: string = '';
+  constructor(type, key) {
+    this.type = type;
+    this.key = key;
   }
 }
 
@@ -256,7 +269,7 @@ export class ActivitatsCicle {
   Activitats: ActivitatHome[][] = [];
   Promocio: PromocioHome = new PromocioHome();
 
-  constructor(Cicle?: ActivitatHome, Activitats?: ActivitatHome[], Divisor = 3) {
+  constructor(Cicle?: ActivitatHome, Activitats?: ActivitatHome[], Divisor = 100) {
     if (Cicle) this.Cicle = Cicle;
 
     let TMP: ActivitatHome[] = [];
@@ -267,6 +280,7 @@ export class ActivitatsCicle {
         TMP = [];
       }
     });
+    this.Activitats.push(TMP);
 
     this.Promocio.fromApp(
       0,
