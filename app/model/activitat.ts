@@ -1,6 +1,6 @@
 import { PromocioHome } from './promocio';
 import { environment } from 'src/environments/environment';
-import { HorariDetall, HorariDetallDates } from './horari';
+import { HorariDetall, HorariDetallDates, HorariDetallAjax } from './horari';
 import { ThrowStmt } from '@angular/compiler';
 
 export class Activitat {}
@@ -68,12 +68,10 @@ export class ActivitatDetall {
     if (ActivitatsRelacionades) this.ActivitatsRelacionades = ActivitatsRelacionades;
   }
 
-  fromAjax(OA: { Activitat: ActivitatSQL; Horaris: HorariDetall[]; ActivitatsRelacionades: ActivitatHome[] }) {
+  fromAjax(OA: { Activitat: ActivitatSQL; Horaris: HorariDetallAjax[]; ActivitatsRelacionades: ActivitatHome[] }) {
     this.ActivitatDetall = new ActivitatSQL(OA.Activitat[0]);
     this.ActivitatsRelacionades = new ActivitatHomeArray(OA['ActivitatsRelacionades']).getArray();
     this.ActivitatHoraris = new HorariDetallDates(OA['Horaris']);
-    console.log(OA['Horaris']);
-    console.log(this.ActivitatHoraris);
   }
 }
 
@@ -106,6 +104,7 @@ export class ActivitatHome {
   NomActivitat: string = '';
   NomActivitatIntern: string = '';
   Categories: string[] = [];
+  TipusActivitatId: number = 0;
   Dia: string = '';
   DiaMax: string = '';
   HoraInici: string = '';

@@ -29,6 +29,9 @@ $requadre_color: $color_fons_detall;
   width: 100%;
   text-align: center;
 }
+.dates2 {
+  text-align: center;
+}
 .titol_text {
 }
 .text {
@@ -62,6 +65,54 @@ $requadre_color: $color_fons_detall;
     font-size: $font_size_S + px;
     padding: 10px;
   }
+
+  .cal {
+    font-size: 8px;
+  }
+  .cal-fila {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .cal-mes {
+    background-color: #aaaaaa;
+    padding: 2px;
+    font-size: 8px;
+  }
+  .cal-dia,
+  .cal-dia-festiu,
+  .cal-dia-ocupat {
+    font-size: 8px;
+    padding: 0px;
+    background-color: #eeeeee;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .cal-dia-festiu {
+    background-color: #aaaaaa;
+  }
+  .cal-dia-ocupat {
+    font-weight: bolder;
+  }
+  .cal-info-text {
+    font-size: 8px;
+  }
+  .cal-info-text-espai-hora {
+    font-size: 9px;
+    font-weight: bolder;
+  }
+  .cartellLlocHora {
+    text-align: center;
+  }
+  .dates {
+    margin-top: 10px;
+    font-size: 8px;
+  }
+  .dates2 {
+    margin-top: 10px;
+    font-size: 8px;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
@@ -88,6 +139,53 @@ $requadre_color: $color_fons_detall;
     font-size: $font_size_M + px;
     padding: 10px;
   }
+
+  .cal {
+    font-size: 10px;
+  }
+  .cal-fila {
+    display: flex;
+    justify-content: space-around;
+  }
+  .cal-mes {
+    background-color: #aaaaaa;
+    padding: 2px;
+    font-size: 10px;
+  }
+  .cal-dia,
+  .cal-dia-festiu,
+  .cal-dia-ocupat {
+    font-size: 10px;
+    padding: 2px;
+    background-color: #eeeeee;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .cal-dia-festiu {
+    background-color: #aaaaaa;
+  }
+  .cal-dia-ocupat {
+    font-weight: bolder;
+  }
+  .cal-info-text {
+    font-size: 10px;
+  }
+  .cal-info-text-espai-hora {
+    font-size: 12px;
+    font-weight: bolder;
+  }
+  .cartellLlocHora {
+    text-align: center;
+  }
+  .dates {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .dates2 {
+    margin-top: 10px;
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
@@ -102,9 +200,7 @@ $requadre_color: $color_fons_detall;
   .titol {
     font-size: $font_size_L + 10 + px;
   }
-  .dates {
-    font-size: $font_size_L + px;
-  }
+
   .titol_text {
     font-size: $font_size_L + px;
     font-weight: bold;
@@ -113,5 +209,52 @@ $requadre_color: $color_fons_detall;
   .text {
     font-size: $font_size_L + px;
     padding: 10px;
+  }
+
+  .cal {
+    font-size: 12px;
+  }
+  .cal-fila {
+    display: flex;
+    justify-content: space-around;
+  }
+  .cal-mes {
+    background-color: #aaaaaa;
+    padding: 5px;
+    font-size: 12px;
+  }
+  .cal-dia,
+  .cal-dia-festiu,
+  .cal-dia-ocupat {
+    font-size: 12px;
+    padding: 5px;
+    background-color: #eeeeee;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  .cal-dia-festiu {
+    background-color: #aaaaaa;
+  }
+  .cal-dia-ocupat {
+    font-weight: bolder;
+  }
+  .cal-info-text {
+    font-size: 12px;
+  }
+  .cal-info-text-espai-hora {
+    font-size: 14px;
+    font-weight: bolder;
+  }
+  .cartellLlocHora {
+    text-align: center;
+  }
+  .dates {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .dates2 {
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 10px;
   }
 }

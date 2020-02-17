@@ -3,7 +3,22 @@
     <div class="titol">
       {{ ActivitatDetall.ActivitatDetall.Activitats_TitolMig }}
     </div>
-    <div class="dates" [innerHtml]="ActivitatDetall.ActivitatHoraris.LlistatText"></div>
+    <div class="dates" [innerHTML]="ActivitatDetall.ActivitatHoraris.TextResum">&nbsp;</div>
+    <div class="dates2">(<a (click)="veureDetall()">+ veure en detall</a>)</div>
+    <div *ngIf="MostraDetall">
+      <div *ngFor="let C of ActivitatDetall.ActivitatHoraris.LlistatCalendari.Calendari.Anys">
+        <div class="cal">
+          <div class="cal-fila" *ngFor="let M of C.MesosAny">
+            <div class="cal-mes">{{ M.Nom }} {{ C.NumeroAnyDosXifres }}</div>
+            <div class="cal-dia" [ngClass]="tipusDia(D)" (click)="veureHorariDia(D)" *ngFor="let D of M.Dies">
+              {{ D.DiaNumero }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cal-info-text">Clica un dia per saber el lloc i l'hora</div>
+      <div class="cartellLlocHora">{{ Horaris_i_llocs }}</div>
+    </div>
   </div>
   <div class="requadre_detall">
     <!-- <div class="titol_text"

@@ -225,6 +225,10 @@ $mida_fletxa_L: 75;
     right: $margin_M + px;
     top: 15px;
   }
+  .filter_box_img {
+    margin-left: 5px;
+    height: 20px;
+  }
   .requadre {
     margin-top: $margin_M + px;
     padding-bottom: $margin_M + px;
@@ -300,6 +304,9 @@ $mida_fletxa_L: 75;
     position: absolute;
     right: $margin_L + px;
     top: 15px;
+  }
+  .filter_box_img {
+    margin-left: 10px;
   }
   .requadre {
     padding-bottom: 0px;
