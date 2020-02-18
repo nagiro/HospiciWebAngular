@@ -19,6 +19,9 @@
     <div class="caixa-swiper">
       <div class="swiper-slide" *ngFor="let D of _DadesActivitatsFiltrades" [routerLink]="D.linkDetall">
         <div class="requadre_imatge">
+          <div class="tag" [ngStyle]="getTagStyle()">
+            <img src="{{ D.UrlImatgeCategoriaVinculada }}" />
+          </div>
           <img src="{{ D.gURLImatge }}" class="requadre_imatge_img" />
 
           <div class="requadre_text">
@@ -74,6 +77,9 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide" style="width: 200px;" *ngFor="let D of _DadesActivitats" [routerLink]="D.linkDetall">
           <div class="requadre_imatge">
+            <div class="tag" [ngStyle]="getTagStyle()">
+              <img src="{{ D.UrlImatgeCategoriaVinculada }}" />
+            </div>
             <img src="{{ D.gURLImatge }}" class="requadre_imatge_img" />
 
             <div class="requadre_text">

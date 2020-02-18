@@ -217,6 +217,27 @@ $mida_fletxa_L: 75;
     padding: 10px;
     font-weight: normal;
   }
+  .tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid;
+    border-right: 15px solid;
+    border-top: 15px solid;
+    border-bottom: 15px solid;
+    z-index: 1;
+    /* borders per fer fletxa surt de single-list.component.ts */
+  }
+  .tag > img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+  }
 }
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
@@ -296,6 +317,26 @@ $mida_fletxa_L: 75;
     font-size: 12px;
     padding: 10px;
     font-weight: normal;
+  }
+  .tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+    /* borders per fer fletxa surt de single-list.component.ts */
+  }
+  .tag > img {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
   }
 }
 
@@ -382,5 +423,26 @@ $mida_fletxa_L: 75;
     font-size: 14px;
     padding: 10px;
     font-weight: normal;
+  }
+
+  .tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid;
+    border-right: 15px solid;
+    border-top: 15px solid;
+    border-bottom: 15px solid;
+    /* borders per fer fletxa surt de single-list.component.ts */
+  }
+  .tag > img {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -12px;
+    right: -12px;
   }
 }

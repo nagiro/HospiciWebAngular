@@ -92,4 +92,20 @@ export class SingleListComponent implements OnInit {
     this.MostroInfo = !this.MostroInfo;
     return this.MostroInfo;
   }
+
+  getTagStyle() {
+    let R = parseInt(parseInt(this.InputColor.substring(1, 3), 16).toString(10)) + 20;
+    let G = parseInt(parseInt(this.InputColor.substring(3, 5), 16).toString(10)) + 20;
+    let B = parseInt(parseInt(this.InputColor.substring(5, 7), 16).toString(10)) + 20;
+    let NewColor = '#' + R.toString(16) + G.toString(16) + B.toString(16);
+
+    let Style: Object = new Object();
+    Style['background-color'] = this.InputColor;
+    Style['border-left-color'] = NewColor;
+    Style['border-bottom-color'] = NewColor;
+    Style['border-top-color'] = this.InputColor;
+    Style['border-right-color'] = this.InputColor;
+
+    return Style;
+  }
 }

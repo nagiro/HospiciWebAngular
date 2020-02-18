@@ -111,6 +111,9 @@ export class ActivitatHome {
   HoraFi: string = '';
   DiaFiCicle: string = '';
   NomEspai: string = '';
+  CategoriaVinculada: number = 0;
+  UrlImatgeCategoriaVinculadaBlanca: string = '';
+  UrlImatgeCategoriaVinculadaNegra: string = '';
   Pagina: number = 0;
   Importancia: number = 0;
   gURLImatge: string = '';
@@ -155,6 +158,11 @@ export class ActivitatHome {
     let DiaFinal = new DiaHora(this.DiaMax, this.HoraInici, this.NomEspai);
     this.gDiesHores = [DiaInicial, DiaFinal];
     this.gTextDiesHores = new DatesToText().tractaDates(this.gDiesHores);
+
+    if (this.CategoriaVinculada) {
+      this.UrlImatgeCategoriaVinculadaBlanca = '/assets/img/TipusActivitats/B' + this.CategoriaVinculada.toString() + '.png';
+      this.UrlImatgeCategoriaVinculadaNegra = '/assets/img/TipusActivitats/N' + this.CategoriaVinculada.toString() + '.png';
+    }
   }
 
   isCicle() {
@@ -180,8 +188,8 @@ export class DatesToText {
     }
 
     if (DataMin.getDataNumber() == DataMax.getDataNumber()) {
-      this.gTextDates = 'El dia ' + DataMin.getDataText() + ' a les ' + DataMin.getHoraText();
-      this.gTextDies = 'El dia ' + DataMin.getDataText();
+      this.gTextDates = 'El ' + DataMin.getDataText() + ' a les ' + DataMin.getHoraText();
+      this.gTextDies = 'El ' + DataMin.getDataText();
       this.gTextHores = 'A les ' + DataMin.getHoraText();
       this.gTextEspais = DataMin.getEspai();
     } else {

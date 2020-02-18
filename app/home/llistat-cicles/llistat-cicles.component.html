@@ -7,6 +7,13 @@
 
   <div class="quadricula" *ngFor="let ActivitatRow of ActivitatsCicle.Activitats">
     <div class="requadre_imatge" *ngFor="let Activitat of ActivitatRow" [routerLink]="Activitat.linkDetall">
+      <div class="tag" [ngStyle]="getTagStyle()">
+        <img
+          *ngIf="Activitat.UrlImatgeCategoriaVinculadaNegra.length > 0"
+          src="{{ Activitat.UrlImatgeCategoriaVinculadaNegra }}"
+        />
+      </div>
+
       <img src="{{ Activitat.gURLImatge }}" class="requadre_imatge_img" />
 
       <div class="requadre_text">
