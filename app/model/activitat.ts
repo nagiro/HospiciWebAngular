@@ -77,13 +77,21 @@ export class ActivitatDetall {
 
 export class FiltreActivitat {
   public static readonly DATA_INICIAL = 'DATA_INICIAL';
-  public static readonly ID_TIPUS_ACTIVITAT = 'ID_TIPUS_ACTIVITAT';
+  public static readonly TAG_VINCULAT = 'TAG_VINCULAT';
 
   type: string = '';
   key: string = '';
   constructor(type, key) {
     this.type = type;
     this.key = key;
+  }
+
+  isTag() {
+    return this.type == FiltreActivitat.TAG_VINCULAT;
+  }
+
+  isData() {
+    return this.type == FiltreActivitat.DATA_INICIAL;
   }
 }
 

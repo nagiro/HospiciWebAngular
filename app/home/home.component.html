@@ -13,8 +13,8 @@
     <app-breadcumb *ngIf="WebStructure.Mode.breadcumb" [Breadcumb]="WebStructure.Breadcumb"></app-breadcumb>
 
     <app-calendari
-      (Filtres)="AplicaFiltre($event)"
       *ngIf="WebStructure.Mode.calendari || WebStructure.Mode.lists_activitats"
+      (Filtre)="executaFiltre($event)"
     ></app-calendari>
 
     <app-static-page [InputDades]="WebStructure.StaticPage" *ngIf="WebStructure.Mode.static_page"> ></app-static-page>

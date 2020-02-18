@@ -14,7 +14,7 @@ import { PromocioHome, PromocioHomeArray } from '../model/promocio';
 import { ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { StateService } from './state.service';
 import { Webmodel, ModeClass } from '../model/webmodel';
-import { TipusActivitatArray } from '../model/tipus-activitat';
+import { TipusActivitatArray, TagsArray } from '../model/tipus-activitat';
 import { MenuElement } from '../model/nodes';
 import { StaticPage } from '../model/static-page';
 
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
           break;
         }
         case 'activitats': {
-          this.ExecutaActivitats(URL, []);
+          this.ExecutaActivitats(URL);
           this.Mode.setModeLlistatActivitats();
           break;
         }
@@ -72,6 +72,11 @@ export class HomeComponent implements OnInit {
         }
         case 'calendari': {
           this.ExecutaCalendari();
+          break;
+        }
+        case 'tag': {
+          this.ExecutaActivitats(URL);
+          this.Mode.setModeLlistatActivitats();
           break;
         }
         default: {
@@ -120,24 +125,55 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  ExecutaActivitats(URL: UrlSegment[] = [], Filtres: FiltreActivitat[]) {
+  /** Aquí hi podem entrar amb TAG (On hi ha el tipus d'activitat) o bé amb Activitats ( on hi ha la categoria de l'activitat ) */
+  /** Podem entrar per: http://localhost:4200/activitats/0/Totes_les_activitats o a través d'aplicar filtres */
+  ExecutaActivitats(URL: UrlSegment[] = [], Filtres: FiltreActivitat[] = []) {
+    /* Entrem amb URL */
+
     let H = new HttpParams().set('mode', 'activitats');
+    let TipusActivitat = 0;
 
-    if (Filtres.length > 0) H = H.append('Filtres', JSON.stringify(Filtres));
+    /** Si entrem alguna cosa per URL */
+    if (URL.length === 3) {
+      if (URL[0].toString() == 'activitats') {
+        TipusActivitat = Number(URL[1].toString());
+        H = H.append('idTipus', String(TipusActivitat));
+      }
+    }
 
-    let idA: number = 0;
-    if (URL.length > 0) idA = Number(URL[1].toString());
-    H = H.append('idTipus', String(idA));
+    /** Si entrem per Filtres */
+    if (Filtres.length > 0) {
+      H = H.append('Filtres', JSON.stringify(Filtres));
+    }
 
     this.http.post<any>(this.api.apiURL + '/getActivitats', H).subscribe((OA: any) => {
       this.WebStructure = new Webmodel();
-
       this.WebStructure.Promocions = [];
       this.WebStructure.ActivitatsPerTipus = [];
-
-      let TA = new TipusActivitatArray().fromAjax(OA['TipusActivitats']).getKey(Number(idA));
       this.WebStructure.Activitats = new ActivitatHomeArray(OA['Activitats']).getArray();
-      this.WebStructure.ActivitatsPerTipus.push(new ActivitatsPerTipus(idA, TA.tipusDesc, this.WebStructure.Activitats));
+
+      //Si entrem un filtre de tag (Tipus d'activitat) o una Categoria d'activitat (Checkbox d'activitat)
+      if (Filtres.length > 0) {
+        if (Filtres[0].isTag()) {
+          const TA = new TagsArray().fromAjax(OA['TagsActivitats']).getKey(Number(Filtres[0].key));
+          this.WebStructure.ActivitatsPerTipus.push(
+            new ActivitatsPerTipus(parseInt(Filtres[0].key), TA.Nom, this.WebStructure.Activitats)
+          );
+        }
+        if (Filtres[0].isData()) {
+          this.WebStructure.ActivitatsPerTipus.push(
+            new ActivitatsPerTipus(parseInt(Filtres[0].key), Filtres[0].key, this.WebStructure.Activitats)
+          );
+        }
+      }
+
+      if (URL.length == 3 && URL[0].toString() == 'activitats') {
+        const TA = new TipusActivitatArray().fromAjax(OA['TipusActivitats']).getKey(Number(TipusActivitat));
+        this.WebStructure.ActivitatsPerTipus.push(
+          new ActivitatsPerTipus(TipusActivitat, TA.tipusDesc, this.WebStructure.Activitats)
+        );
+      }
+
       this.WebStructure.Promocions.push(new PromocioHome().fromApp(0, 'Totes les activitats', '', '', '', []));
       this.WebStructure.Breadcumb.fromAjax(OA['Breadcumb']);
       this.WebStructure.Menu = new MenuElement(OA['Menu']);
@@ -205,7 +241,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  AplicaFiltre($event: FiltreActivitat[]) {
-    this.ExecutaActivitats([], $event);
+  executaFiltre(FA: FiltreActivitat[]) {
+    this.ExecutaActivitats([], FA);
   }
 }

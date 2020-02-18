@@ -13,8 +13,9 @@ export class CalendariComponent implements OnInit {
   AnyText = '';
   AnyNumero = 0;
   QuantsDiesMes = 0;
+
   _Filtres: FiltreActivitat[] = [];
-  @Output() Filtres: EventEmitter<FiltreActivitat[]> = new EventEmitter();
+  @Output() Filtre: EventEmitter<FiltreActivitat[]> = new EventEmitter();
 
   DiesMes: { DiaText: string; DiaNumero: number; C: any[] }[] = [];
   DiesMesFiles: any[] = [];
@@ -136,20 +137,18 @@ export class CalendariComponent implements OnInit {
     }
   }
 
-  AplicaFiltre(type: string, key: string) {
-    switch (type) {
-      case FiltreActivitat.DATA_INICIAL: {
-        let Data = this.AnyNumero + '-' + (this.MesNumero + 1) + '-' + key;
-        this._Filtres.push(new FiltreActivitat(type, Data));
-        break;
-      }
-      case FiltreActivitat.ID_TIPUS_ACTIVITAT: {
-        this._Filtres.push(new FiltreActivitat(type, key));
-        break;
-      }
-    }
-    this.Filtres.emit(this._Filtres);
-  }
-
   ngOnInit() {}
+
+  executaFiltre(tipus: string, id: string) {
+    let F = new FiltreActivitat(tipus, id);
+
+    //Ho tenim com un array, per si algun dia volem afegir-hi més d'un filtre...
+    if (F.type == FiltreActivitat.DATA_INICIAL) {
+      F.key = this.AnyNumero + '-' + (this.MesNumero + 1) + '-' + F.key;
+    }
+
+    this._Filtres = [];
+    this._Filtres.push(F);
+    this.Filtre.emit(this._Filtres);
+  }
 }

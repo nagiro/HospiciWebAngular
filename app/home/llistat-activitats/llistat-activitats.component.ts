@@ -8,7 +8,7 @@ import { ActivitatsPerTipus } from 'src/app/model/activitat';
 })
 export class LlistatActivitatsComponent implements OnInit {
   _DadesActivitatsPerTipus: ActivitatsPerTipus[] = [];
-  InputColor: string = '#CCCCCC';
+  InputColor: string = '#FFFFFF';
 
   @Input() set InputDades(DA: ActivitatsPerTipus[]) {
     this._DadesActivitatsPerTipus = DA;

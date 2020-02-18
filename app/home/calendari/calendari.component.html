@@ -34,7 +34,7 @@
     <div class="cal-mesos-fletxa" (click)="GoMes(false)">></div>
   </div>
   <div class="control-dies">
-    <div [ngClass]="D.C" *ngFor="let D of DiesMes" (click)="AplicaFiltre('DATA_INICIAL', D.DiaNumero)">
+    <div [ngClass]="D.C" *ngFor="let D of DiesMes" (click)="executaFiltre('DATA_INICIAL', D.DiaNumero)">
       <div class="cal-dia-text">{{ D.DiaText }}</div>
       <div class="cal-dia-numero">{{ D.DiaNumero }}</div>
     </div>
@@ -44,7 +44,14 @@
 <div class="box-mes-filtres">
   <div class="mes-filtres">Més filtres</div>
   <div class="mes-filtres-resta">
-    <div class="mes-filtres-resta-element" (click)="AplicaFiltre('ID_TIPUS_ACTIVITAT', 45)">Exposicions</div>
-    <div class="mes-filtres-resta-element" (click)="AplicaFiltre('ID_TIPUS_ACTIVITAT', 46)">Música</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 7)">Música</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 6)">Humanitats</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 5)">Exposició</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 8)">Conferència</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 4)">Científica</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 11)">Tecnològica</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 3)">Familiar</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 2)">Curs</div>
+    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 1)">Artística</div>
   </div>
 </div>
