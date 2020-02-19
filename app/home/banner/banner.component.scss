@@ -208,7 +208,7 @@ $mida_boto_M: 14;
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
   .banner {
     margin-top: 0px;
-    margin-left: $margin_L + px;
+    margin-left: $margin_L - 3 + px;
   }
   .banner-image {
     width: $requadre_width_L + px;
