@@ -53,7 +53,7 @@ export class ActivitatSQL {
         .trim()
         .replace(/\b\w/g, s => s.toUpperCase());
 
-      this.gURLImatge = 'http://www.casadecultura.cat/images/activitats/A-' + this.Activitats_ActivitatId + '-L.jpg';
+      this.gURLImatge = '/images/activitats/A-' + this.Activitats_ActivitatId + '-L.jpg';
     }
   }
 }
@@ -170,6 +170,9 @@ export class ActivitatHome {
     if (this.CategoriaVinculada) {
       this.UrlImatgeCategoriaVinculadaBlanca = '/assets/img/TipusActivitats/B' + this.CategoriaVinculada.toString() + '.png';
       this.UrlImatgeCategoriaVinculadaNegra = '/assets/img/TipusActivitats/N' + this.CategoriaVinculada.toString() + '.png';
+    } else {
+      this.UrlImatgeCategoriaVinculadaBlanca = '/assets/img/TipusActivitats/B0.png';
+      this.UrlImatgeCategoriaVinculadaNegra = '/assets/img/TipusActivitats/N0.png';
     }
   }
 
