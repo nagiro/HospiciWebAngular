@@ -25,9 +25,14 @@ $TotalMesosS: $MesosS + $FletxaMesosS * 2;
   }
   .requadre_tots_filtres {
     padding-left: 10px;
-    display: flex;
+    display: block;
     background-color: black;
-    justify-content: center;
+    // justify-content: center;
+  }
+
+  .AltresFiltresBlock {
+    padding-bottom: 10px;
+    padding-right: 10px;
   }
 
   .requadre_calendari {

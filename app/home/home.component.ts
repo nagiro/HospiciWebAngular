@@ -154,15 +154,20 @@ export class HomeComponent implements OnInit {
 
       //Si entrem un filtre de tag (Tipus d'activitat) o una Categoria d'activitat (Checkbox d'activitat)
       if (Filtres.length > 0) {
+        // Entrem amb un tag al filtre
         if (Filtres[0].isTag()) {
           const TA = new TagsArray().fromAjax(OA['TagsActivitats']).getKey(Number(Filtres[0].key));
           this.WebStructure.ActivitatsPerTipus.push(
             new ActivitatsPerTipus(parseInt(Filtres[0].key), TA.Nom, this.WebStructure.Activitats)
           );
         }
+
+        // Entrem amb una data al filtre
         if (Filtres[0].isData()) {
+          const T = Filtres[0].key.split('-');
+          const Data = 'Dia ' + T[2] + '/' + T[1] + '/' + T[0];
           this.WebStructure.ActivitatsPerTipus.push(
-            new ActivitatsPerTipus(parseInt(Filtres[0].key), Filtres[0].key, this.WebStructure.Activitats)
+            new ActivitatsPerTipus(parseInt(Filtres[0].key), Data, this.WebStructure.Activitats)
           );
         }
       }

@@ -63,6 +63,8 @@ $espaientrefotos_S: 25;
 
 @media screen and (min-width: $width_S_MIN + px) and (max-width: $width_S_MAX + px) {
   .TitolCicle {
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 20px;
     width: $requadre_width_S + px;
   }
@@ -137,6 +139,7 @@ $espaientrefotos_S: 25;
 
 @media screen and (min-width: $width_M_MIN + px) and (max-width: $width_M_MAX + px) {
   .TitolCicle {
+    margin-top: 20px;
     font-size: 40px;
     width: $requadre_width_M + px;
   }
@@ -204,6 +207,7 @@ $espaientrefotos_S: 25;
 
 @media screen and (min-width: $width_L_MIN + px) and (max-width: $width_L_MAX + px) {
   .TitolCicle {
+    margin-top: 20px;
     font-size: 40px;
     width: $requadre_width_L + px;
   }

@@ -13,6 +13,7 @@ export class CalendariComponent implements OnInit {
   AnyText = '';
   AnyNumero = 0;
   QuantsDiesMes = 0;
+  TagsDisponibles: [Number, String][] = [];
 
   _Filtres: FiltreActivitat[] = [];
   @Output() Filtre: EventEmitter<FiltreActivitat[]> = new EventEmitter();
@@ -24,6 +25,15 @@ export class CalendariComponent implements OnInit {
     //Creem un calendari
     let D = new Date();
     this.CarregaMes(D.getMonth(), D.getFullYear());
+    this.TagsDisponibles.push([1, 'Artística']);
+    this.TagsDisponibles.push([2, 'Curs']);
+    this.TagsDisponibles.push([3, 'Familiar']);
+    this.TagsDisponibles.push([4, 'Científica']);
+    this.TagsDisponibles.push([5, 'Exposició']);
+    this.TagsDisponibles.push([6, 'Humanitats']);
+    this.TagsDisponibles.push([7, 'Música']);
+    this.TagsDisponibles.push([8, 'Conferència']);
+    this.TagsDisponibles.push([11, 'Tecnològica']);
   }
 
   GoMes(Menys = false) {

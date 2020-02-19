@@ -2,7 +2,7 @@
   <div class="titol_filtres" (click)="FiltresOberts = !FiltresOberts">Filtres</div>
   <div class="requadre_tots_filtres" *ngIf="FiltresOberts">
     <div class="requadre_calendari">
-      <div class="cal-mesos-fletxa" (click)="GoMes(true)"><</div>
+      <div class="cal-mesos-fletxa" (click)="GoMes(true)">&lt;</div>
       <div class="requadre-taula-calendari">
         <div class="control-mesos">{{ MesText }} {{ AnyText }}</div>
         <div class="taula-calendari">
@@ -17,12 +17,20 @@
               <td>Dg</td>
             </tr>
             <tr *ngFor="let Row of DiesMesFiles">
-              <td *ngFor="let D of Row" [ngClass]="D.C" (click)="AplicaFiltre(D.DiaNumero)">{{ D.DiaNumero }}</td>
+              <td *ngFor="let D of Row" [ngClass]="D.C" (click)="executaFiltre('DATA_INICIAL', D.DiaNumero)">
+                {{ D.DiaNumero }}
+              </td>
             </tr>
           </table>
         </div>
       </div>
-      <div class="cal-mesos-fletxa" (click)="GoMes(false)">></div>
+      <div class="cal-mesos-fletxa" (click)="GoMes(false)">&gt;</div>
+    </div>
+    <div class="AltresFiltresBlock form-group">
+      <select id="TagsSelect" style="padding-right: 10px; width: 100%">
+        <option [value]="0">-- ESCULL UN TIPUS D'ACTIVITAT --</option>
+        <option *ngFor="let T of TagsDisponibles" (click)="executaFiltre('TAG_VINCULAT', T[0])">{{ T[1] }}</option>
+      </select>
     </div>
   </div>
 </div>
@@ -44,14 +52,8 @@
 <div class="box-mes-filtres">
   <div class="mes-filtres">Més filtres</div>
   <div class="mes-filtres-resta">
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 7)">Música</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 6)">Humanitats</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 5)">Exposició</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 8)">Conferència</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 4)">Científica</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 11)">Tecnològica</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 3)">Familiar</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 2)">Curs</div>
-    <div class="mes-filtres-resta-element" (click)="executaFiltre('TAG_VINCULAT', 1)">Artística</div>
+    <div class="mes-filtres-resta-element" *ngFor="let T of TagsDisponibles" (click)="executaFiltre('TAG_VINCULAT', T[0])">
+      {{ T[1] }}
+    </div>
   </div>
 </div>
