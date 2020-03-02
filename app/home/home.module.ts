@@ -18,6 +18,7 @@ import { MenuComponent } from './menu/menu.component';
 import { StaticPageComponent } from './static-page/static-page.component';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { CalendariComponent } from './calendari/calendari.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { CalendariComponent } from './calendari/calendari.component';
     StaticPageComponent,
     CalendariComponent
   ],
-  imports: [CommonModule, HttpClientModule, RouterModule, NgxUsefulSwiperModule],
+  imports: [CommonModule, HttpClientModule, RouterModule, NgxUsefulSwiperModule, BrowserModule],
   exports: [LlistatCiclesComponent, LlistatActivitatsComponent, DetallComponent],
   providers: []
 })
